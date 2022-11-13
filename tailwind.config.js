@@ -11,6 +11,10 @@ module.exports = {
         Borui: ["borui", "serif"],
         Gruppo: ["gruppo", "serif"],
       },
+      colors: {
+        primary: "#113034",
+        secondary: "#fffef9",
+      },
     },
   },
   plugins: [],

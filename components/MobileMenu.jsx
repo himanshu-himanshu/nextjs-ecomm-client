@@ -1,15 +1,18 @@
 import React from "react";
 
-const MobileMenu = () => {
+const MobileMenu = ({ handleOpenMenu }) => {
   return (
-    <div className="lg:hidden flex items-center justify-start w-1/3">
+    <div
+      className="lg:hidden flex items-center justify-start w-1/3 hover:cursor-pointer"
+      onClick={() => handleOpenMenu()}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth="1.5"
         stroke="currentColor"
-        className="w-8 h-8"
+        className="w-7 h-7"
       >
         <path
           strokeLinecap="round"

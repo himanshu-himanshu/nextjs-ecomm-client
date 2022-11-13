@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Cart = ({ ...restProps }) => {
   return (
-    <div className=" h-full flex items-center">
+    <div className=" h-full flex items-center px-4">
       <a
         href="#"
         className="absolute"
@@ -14,7 +14,7 @@ const Cart = ({ ...restProps }) => {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="w-7 h-7"
+          className="w-6 h-6"
         >
           <path
             strokeLinecap="round"

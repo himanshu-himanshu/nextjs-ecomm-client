@@ -1,7 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
 
-import { BeakerIcon } from "@heroicons/react/24/solid";
 import Navbar from "../components/Navbar";
 
 export default function Home() {

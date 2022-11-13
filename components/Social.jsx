@@ -10,7 +10,7 @@ const Social = () => {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="w-7 h-7"
+          className="w-6 h-6"
         >
           <path
             strokeLinecap="round"
