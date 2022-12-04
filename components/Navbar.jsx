@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Cart from "./Cart";
 import Links from "./Links";
@@ -26,7 +26,6 @@ const Navbar = () => {
     setOpenMenu(false);
   };
 
-  console.log(openCart);
   return (
     <div className="flex flex-row px-4 md:px-8 py-4 bg-secondary text-primary border">
       <div className="hidden lg:flex items-center justify-start w-1/3">

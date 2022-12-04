@@ -13,7 +13,7 @@ const OpenMenu = ({ handleCloseMenu }) => {
         animate={{ opacity: 0.5 }}
         transition={{ duration: 0.2 }}
         className="bg-gray-800 lg:hidden absolute w-full h-full top-0 left-0 overflow-hidden cursor-crosshair"
-        onClick={() => handleCloseCart()}
+        onClick={() => handleCloseMenu()}
       ></motion.div>
       <motion.div
         initial={{ x: "-100%" }}
