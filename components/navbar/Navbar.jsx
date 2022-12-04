@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex flex-row px-4 md:px-8 py-4 bg-secondary text-primary border">
+    <div className="w-full flex flex-row px-4 md:px-12 py-4 text-primary h-[10vh] z-40">
       <div className="hidden lg:flex items-center justify-start w-1/3">
         <Links />
       </div>
