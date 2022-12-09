@@ -2,6 +2,7 @@ import Head from "next/head";
 import Banner from "../components/banner/Banner";
 
 import Navbar from "../components/navbar/Navbar";
+import Trending from "../components/trending/Trending";
 
 export default function Home() {
   return (
@@ -12,8 +13,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div className="md:px-6">
+      <div className="md:px-12">
         <Banner />
+        <Trending />
       </div>
     </>
   );
