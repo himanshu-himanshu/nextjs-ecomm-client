@@ -24,7 +24,7 @@ const Cart = ({ ...restProps }) => {
         </svg>
       </a>
       <span className="relative flex items-center justify-center top-2 -right-4 h-5 w-5 rounded-full bg-[#113034] text-white text-xs">
-        4
+        9
       </span>
     </div>
   );

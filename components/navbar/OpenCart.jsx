@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import CloseButton from "../../utils/CloseButton";
 import Cart from "./Cart";
+import { products } from "../../utils/products";
 
 const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
   return (
@@ -27,14 +28,42 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
           <Cart handleOpenCart={handleOpenCart} />
         </div>
         <div className="h-[90vh]">
-          <div className="flex flex-col h-4/5 justify-center items-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-Gruppo tracking-tight">
+          <div className="flex flex-col h-4/6 justify-center items-center">
+            {/* <h1 className="text-3xl md:text-4xl lg:text-5xl font-Gruppo tracking-tight">
               Your cart is empty !
-            </h1>
+            </h1> */}
+            <div className="w-full overflow-y-scroll p-2 cart_div">
+              {products.map((item) => (
+                <div className="group flex flex-row items-center hover:cursor-pointer duration-300 p-4 border-b border-gray-300">
+                  <div className="relative duration-300 w-1/2">
+                    <img src={item.image} alt="" className="w-40 h-40" />
+                    {/* <div className="hidden absolute h-full w-full top-0 left-0 group-hover:flex justify-center items-center duration-300 bg-gray-100/40">
+                      <button className="w-3/4 py-6 px-2 bg-red-100 bg-white/90 uppercase tracking-wide duration-300 hover:bg-black/90 hover:text-gray-100">
+                        Add to Cart
+                      </button>
+                    </div> */}
+                  </div>
+                  <div className="flex flex-col justify-between w-1/2 p-2 space-y-6">
+                    <div className="flex flex-row justify-between items-center">
+                      <h1>{item.title}</h1>
+                      <h1>X</h1>
+                    </div>
+                    <div className="flex flex-row justify-between items-center">
+                      <h1 className="font-bold">${item.price}</h1>
+                      <h1 className="bg-gray-200 px-4 py-1 text-lg">- 1 +</h1>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="w-full h-1/5 px-4 py-8 bg-secondary">
+          <div className="w-full h-2/6 p-4 bg-secondary">
+            <h1 className="my-8 text-lg uppercase tracking-wide flex justify-between font-Gruppo font-extrabold">
+              <span>Subtotal</span>
+              <span>$400</span>
+            </h1>
             <button className="w-full font-bold px-8 py-4 border border-primary text-primary hover:bg-primary hover:text-white duration-200 text-2xl font-Gruppo tracking-wider">
-              Shop Now
+              Checkout
             </button>
           </div>
         </div>
