@@ -1,8 +1,10 @@
 import Head from "next/head";
 import Banner from "../components/banner/Banner";
+import Quote from "../components/banner/Quote";
 
 import Navbar from "../components/navbar/Navbar";
 import Trending from "../components/trending/Trending";
+import GenderSection from "../components/sections/GenderSection";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <div className="md:px-12">
         <Banner />
         <Trending />
+        <Quote />
+        <GenderSection />
       </div>
     </>
   );
