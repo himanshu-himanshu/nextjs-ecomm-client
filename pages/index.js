@@ -5,6 +5,7 @@ import Quote from "../components/banner/Quote";
 import Navbar from "../components/navbar/Navbar";
 import Trending from "../components/trending/Trending";
 import GenderSection from "../components/sections/GenderSection";
+import Footer from "../components/footer/Footer";
 
 export default function Home() {
   return (
@@ -15,11 +16,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div className="md:px-12">
+      <div className="">
         <Banner />
         <Trending />
-        <Quote />
         <GenderSection />
+        <Quote />
+        <Footer />
       </div>
     </>
   );
