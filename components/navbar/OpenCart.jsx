@@ -5,7 +5,7 @@ import Image from "next/image";
 import CloseButton from "../../utils/CloseButton";
 import Cart from "./Cart";
 import { products } from "../../utils/products";
-import cross from "../../assets/cross.png";
+import cross from "../../assets/close.png";
 
 const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
   return (
@@ -51,9 +51,9 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
                     </div>
                     <div className="flex flex-row justify-between items-center">
                       <h1 className="font-bold">${item.price}</h1>
-                      <span className="flex flex-row items-center justify-center p-2">
-                        <Image src={cross} alt="" className="w-4 h-4" />
-                        <span className="text-md">3</span>
+                      <span className="flex flex-row items-center justify-center p-2 space-x-1">
+                        <Image src={cross} alt="" className="w-3 h-3" />
+                        <span className="text-lg">3</span>
                       </span>
                     </div>
                   </div>
