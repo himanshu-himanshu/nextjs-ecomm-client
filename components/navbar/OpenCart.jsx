@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 
 import React from "react";
+import Image from "next/image";
 import CloseButton from "../../utils/CloseButton";
 import Cart from "./Cart";
 import { products } from "../../utils/products";
+import cross from "../../assets/cross.png";
 
 const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
   return (
@@ -12,14 +14,14 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.5 }}
         transition={{ duration: 0.2 }}
-        className="bg-gray-800 absolute w-full h-full top-0 left-0 overflow-hidden cursor-crosshair z-20"
+        className="bg-gray-800 absolute w-full h-full top-0 left-0 overflow-hidden cursor-crosshair z-40"
         onClick={() => handleCloseCart()}
       ></motion.div>
       <motion.div
         initial={{ x: 400 }}
         animate={{ x: 0 }}
         transition={{ duration: 0.5 }}
-        className="absolute h-full bg-white top-0 right-0 w-full sm:min-w-[500px] sm:w-1/3 z-10 overflow-hidden z-40"
+        className="absolute h-full bg-white top-0 right-0 w-full sm:min-w-[500px] sm:w-1/3 overflow-hidden z-40"
       >
         <div className="flex flex-row justify-between px-6 py-6 h-[10vh]">
           <div onClick={() => handleCloseCart()}>
@@ -36,21 +38,23 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
               {products.map((item) => (
                 <div className="group flex flex-row items-center hover:cursor-pointer duration-300 p-4 border-b border-gray-300">
                   <div className="relative duration-300 w-1/2">
-                    <img src={item.image} alt="" className="w-40 h-40" />
+                    <img src={item.image} alt="" className="w-24 h-24" />
                     {/* <div className="hidden absolute h-full w-full top-0 left-0 group-hover:flex justify-center items-center duration-300 bg-gray-100/40">
                       <button className="w-3/4 py-6 px-2 bg-red-100 bg-white/90 uppercase tracking-wide duration-300 hover:bg-black/90 hover:text-gray-100">
                         Add to Cart
                       </button>
                     </div> */}
                   </div>
-                  <div className="flex flex-col justify-between w-1/2 p-2 space-y-6">
+                  <div className="flex flex-col justify-between w-1/2 p-2 space-y-4">
                     <div className="flex flex-row justify-between items-center">
                       <h1>{item.title}</h1>
-                      <h1>X</h1>
                     </div>
                     <div className="flex flex-row justify-between items-center">
                       <h1 className="font-bold">${item.price}</h1>
-                      <h1 className="bg-gray-200 px-4 py-1 text-lg">- 1 +</h1>
+                      <span className="flex flex-row items-center justify-center p-2">
+                        <Image src={cross} alt="" className="w-4 h-4" />
+                        <span className="text-md">3</span>
+                      </span>
                     </div>
                   </div>
                 </div>

@@ -13,9 +13,11 @@ const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(true);
 
   const handleOpenCart = () => {
+    document.body.style.overflow = "hidden";
     setOpenCart(true);
   };
   const handleCloseCart = () => {
+    document.body.style.overflow = "unset";
     setOpenCart(false);
   };
 
