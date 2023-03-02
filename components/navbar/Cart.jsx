@@ -1,6 +1,13 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addItemToCart,
+  calculateTotalItemsQuantity,
+} from "../../redux/features/cart/cartSlice";
 
 const Cart = ({ ...restProps }) => {
+  const dispatch = useDispatch();
+  const totalItems = useSelector((store) => store.cart.totalItems);
   return (
     <div className=" h-full flex items-center px-4">
       <a
@@ -24,7 +31,7 @@ const Cart = ({ ...restProps }) => {
         </svg>
       </a>
       <span className="relative flex items-center justify-center top-2 -right-4 h-5 w-5 rounded-full bg-[#113034] text-white text-xs">
-        9
+        {totalItems}
       </span>
     </div>
   );

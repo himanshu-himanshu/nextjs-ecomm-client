@@ -1,6 +1,8 @@
+import uuid from "react-uuid";
+
 export const products = [
   {
-    id: 1,
+    id: uuid(),
     category: "Hoodie",
     title: "Black Hoodie",
     price: 50,
@@ -11,7 +13,7 @@ export const products = [
     gender: "men",
   },
   {
-    id: 2,
+    id: uuid(),
     category: "Sweater",
     title: "Sweater",
     price: 90,
@@ -22,7 +24,7 @@ export const products = [
     gender: "men",
   },
   {
-    id: 3,
+    id: uuid(),
     category: "T-Shirt",
     title: "Printed T-Shirt",
     price: 50,
@@ -33,7 +35,7 @@ export const products = [
     gender: "men",
   },
   {
-    id: 4,
+    id: uuid(),
     category: "Sweater",
     title: "Blue Sweater",
     price: 50,
@@ -43,7 +45,7 @@ export const products = [
     gender: "men",
   },
   {
-    id: 5,
+    id: uuid(),
     category: "Sweater",
     title: "Pink Sweater",
     price: 50,
@@ -54,7 +56,7 @@ export const products = [
     gender: "women",
   },
   {
-    id: 6,
+    id: uuid(),
     category: "Skirt",
     title: "Cotton Skirt",
     price: 190,
@@ -65,7 +67,7 @@ export const products = [
     gender: "women",
   },
   {
-    id: 7,
+    id: uuid(),
     category: "T-Shirt",
     title: "Long Sleves",
     price: 90,
@@ -75,7 +77,7 @@ export const products = [
     gender: "men",
   },
   {
-    id: 8,
+    id: uuid(),
     category: "Sweater",
     title: "Sweatshirt",
     price: 50,

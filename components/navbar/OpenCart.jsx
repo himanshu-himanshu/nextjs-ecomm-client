@@ -1,7 +1,6 @@
-import { motion } from "framer-motion";
-
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import CloseButton from "../../utils/CloseButton";
 import Cart from "./Cart";
 import { products } from "../../utils/products";

@@ -11,7 +11,7 @@ const Trending = () => {
       </div>
       <div className="text-black grid grid-cols-2 gap-8 lg:grid-cols-3 xl:grid-cols-4 py-12 px-6">
         {products.map((item) => (
-          <Product item={item} />
+          <Product item={item} key={item.id} />
         ))}
       </div>
     </div>
