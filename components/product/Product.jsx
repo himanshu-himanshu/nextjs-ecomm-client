@@ -10,12 +10,12 @@ const Product = ({ item }) => {
 
   console.log(item);
   return (
-    <div className=" flex flex-col justify-center items-center hover:cursor-pointer duration-300">
-      <div className="group relative duration-300">
+    <div className=" flex flex-col justify-center items-center hover:cursor-pointer duration-300 border">
+      <div className="group relative duration-300 p-2">
         <img src={item.image} alt="" className="w-full h-80" />
         <div className="hidden absolute h-full w-full top-0 left-0 group-hover:flex justify-center items-center duration-300 bg-gray-100/40">
           <button
-            className="w-3/4 py-6 px-2 bg-red-100 bg-white/90 uppercase tracking-wide duration-300 hover:bg-black/90 hover:text-gray-100"
+            className="w-[200px] py-6 px-2 bg-gray-100 uppercase tracking-wide duration-300 hover:bg-black/90 hover:text-gray-100"
             onClick={() => {
               dispatch(addItemToCart(item));
             }}
