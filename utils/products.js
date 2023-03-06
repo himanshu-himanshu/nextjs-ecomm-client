@@ -155,7 +155,7 @@ export const products = [
       "https://i5.walmartimages.com/asr/938adbed-2f1f-4986-a773-2f45e348f06d.78b29158b805e664a93c813baf16360d.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
     type: "Clothing",
     gender: "men",
-    rating: "4.9",
+    rating: "4.5",
   },
 
   {
@@ -189,7 +189,7 @@ export const products = [
     id: uuid(),
     category: "Jacket",
     title: "Red Everest Bomber",
-    brand: "North Face",
+    brand: "The North Face",
     price: 450,
     trending: false,
     image:
@@ -203,7 +203,7 @@ export const products = [
     id: uuid(),
     category: "Jacket",
     title: "Refurbished Bomber",
-    brand: "North Face",
+    brand: "The North Face",
     price: 250,
     trending: false,
     image:

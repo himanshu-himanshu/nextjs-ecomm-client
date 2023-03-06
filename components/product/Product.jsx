@@ -4,14 +4,15 @@ import {
   addItemToCart,
   calculateTotalItemsQuantity,
 } from "../../redux/features/cart/cartSlice";
+import ReactStars from "react-stars";
 
 const Product = ({ item }) => {
   const dispatch = useDispatch();
 
   console.log(item);
   return (
-    <div className=" flex flex-col justify-center items-center hover:cursor-pointer duration-300 border">
-      <div className="group relative duration-300 p-2">
+    <div className=" flex flex-col justify-center items-center hover:cursor-pointer duration-300 border border-gray-100/70 rounded-sm">
+      <div className="group relative duration-300 px-2 py-4">
         <img src={item.image} alt="" className="w-full h-80" />
         <div className="hidden absolute h-full w-full top-0 left-0 group-hover:flex justify-center items-center duration-300 bg-gray-100/40">
           <button
@@ -24,10 +25,23 @@ const Product = ({ item }) => {
           </button>
         </div>
       </div>
-      <div className="flex flex-row justify-between w-full p-2">
-        <h1>{item.title}</h1>
+      <div className="w-full px-2 pb-1 flex flex-row justify-between items-center">
+        <h1 className="font-semibold text-gray-700 text-sm">{item.brand}</h1>
+        <span>
+          <ReactStars
+            count={5}
+            size={14}
+            color={"#ffd700"}
+            edit={false}
+            value={item.rating}
+            isHalf={true}
+          />
+        </span>
+      </div>
+      <div className="flex flex-row justify-between w-full px-2 pb-2">
+        <h1 className="text-gray-700">{item.title}</h1>
         <div className="flex flex-row space-x-2 items-center">
-          <h1>${item.price}</h1>
+          <h1 className="text-gray-700">${item.price}</h1>
           <button
             className="text-pink-700"
             onClick={() => console.log(item.title)}
