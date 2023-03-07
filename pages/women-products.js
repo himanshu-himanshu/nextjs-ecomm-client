@@ -1,12 +1,10 @@
-import React from "react";
 import Head from "next/head";
-import Banner from "../components/banner/Banner";
-import Quote from "../components/banner/Quote";
 
+import Quote from "../components/banner/Quote";
 import Navbar from "../components/navbar/Navbar";
-import Trending from "../components/trending/Trending";
 import GenderSection from "../components/sections/GenderSection";
 import Footer from "../components/footer/Footer";
+import Women from "../components/women/Women";
 
 const WomenProducts = () => {
   return (
@@ -17,6 +15,8 @@ const WomenProducts = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
+      <Women />
+      <Quote />
       <Footer />
     </>
   );

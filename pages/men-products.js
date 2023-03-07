@@ -1,12 +1,9 @@
-import React from "react";
 import Head from "next/head";
-import Banner from "../components/banner/Banner";
 import Quote from "../components/banner/Quote";
 
 import Navbar from "../components/navbar/Navbar";
-import Trending from "../components/trending/Trending";
-import GenderSection from "../components/sections/GenderSection";
 import Footer from "../components/footer/Footer";
+import Men from "../components/men/Men";
 
 const MenProducts = () => {
   return (
@@ -17,6 +14,8 @@ const MenProducts = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
+      <Men />
+      <Quote />
       <Footer />
     </>
   );

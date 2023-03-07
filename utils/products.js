@@ -12,7 +12,7 @@ export const products = [
       "https://ih1.redbubble.net/image.911954075.4332/ssrco,mhoodie,mens,101010:01c5ca27c6,front,square_product,x600-bg,f8f8f8.1.jpg",
     type: "Clothing",
     gender: "men",
-    rating: "4",
+    rating: 4,
   },
   {
     id: uuid(),
@@ -25,7 +25,7 @@ export const products = [
       "https://i.pinimg.com/736x/66/1e/60/661e60737b8d03fd4a4731933da6ace9.jpg",
     type: "Clothing",
     gender: "men",
-    rating: "4.5",
+    rating: 4.5,
   },
   {
     id: uuid(),
@@ -38,7 +38,7 @@ export const products = [
       "https://ih1.redbubble.net/image.660508131.3741/ssrco,slim_fit_t_shirt,mens,101010:01c5ca27c6,front,square_product,600x600.u1.jpg",
     type: "Clothing",
     gender: "men",
-    rating: "3.2",
+    rating: 3.2,
   },
   {
     id: uuid(),
@@ -50,7 +50,7 @@ export const products = [
     image: "https://m.media-amazon.com/images/I/A1KPbUkuTlL._AC_SL1500_.jpg",
     type: "Clothing",
     gender: "men",
-    rating: "5",
+    rating: 5,
   },
   {
     id: uuid(),
@@ -63,7 +63,7 @@ export const products = [
       "https://ae01.alicdn.com/kf/H0496ba41a870467d8f055fc63824e6efY.jpg?width=800&height=800&hash=1600",
     type: "Clothing",
     gender: "women",
-    rating: "4.8",
+    rating: 4.8,
   },
   {
     id: uuid(),
@@ -76,7 +76,7 @@ export const products = [
       "https://assets.vogue.com/photos/6258391e9711689c336fb478/1:1/w_2667,h_2667,c_limit/slide_5.jpg",
     type: "Clothing",
     gender: "women",
-    rating: "4.2",
+    rating: 4.2,
   },
   {
     id: uuid(),
@@ -88,7 +88,7 @@ export const products = [
     image: "https://i.insider.com/5fb57a6e50e71a0011556017",
     type: "Clothing",
     gender: "men",
-    rating: "4",
+    rating: 4,
   },
   {
     id: uuid(),
@@ -100,7 +100,7 @@ export const products = [
     image: "https://m.media-amazon.com/images/I/71KEHN61HJL._AC_UX522_.jpg",
     type: "Clothing",
     gender: "women",
-    rating: "4",
+    rating: 4,
   },
 
   /** More Products */
@@ -115,7 +115,7 @@ export const products = [
     image: "https://m.media-amazon.com/images/I/51TNehxN-sL._AC_UL1001_.jpg",
     type: "Clothing",
     gender: "men",
-    rating: "2.5",
+    rating: 2.5,
   },
 
   {
@@ -128,7 +128,7 @@ export const products = [
     image: "https://m.media-amazon.com/images/I/41+iSPphj-L._AC_UX679_.jpg",
     type: "Clothing",
     gender: "men",
-    rating: "3.5",
+    rating: 3.5,
   },
 
   {
@@ -141,7 +141,7 @@ export const products = [
     image: "https://m.media-amazon.com/images/I/71k+p5uFMWL._UX466_.jpg",
     type: "Clothing",
     gender: "men",
-    rating: "5",
+    rating: 5,
   },
 
   {
@@ -155,7 +155,7 @@ export const products = [
       "https://i5.walmartimages.com/asr/938adbed-2f1f-4986-a773-2f45e348f06d.78b29158b805e664a93c813baf16360d.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
     type: "Clothing",
     gender: "men",
-    rating: "4.5",
+    rating: 4.5,
   },
 
   {
@@ -168,7 +168,7 @@ export const products = [
     image: "https://m.media-amazon.com/images/I/81sM3-mgZIL._UL1500_.jpg",
     type: "Clothing",
     gender: "men",
-    rating: "4.7",
+    rating: 4.7,
   },
 
   {
@@ -182,7 +182,7 @@ export const products = [
       "https://images.costco-static.com/ImageDelivery/imageService?profileId=12026539&imageId=100463130-894__1&recipeName=350",
     type: "Clothing",
     gender: "men",
-    rating: "3.9",
+    rating: 3.9,
   },
 
   {
@@ -196,7 +196,7 @@ export const products = [
       "https://image1.superdry.com/static/images/optimised/zoom/upload9223368955665417053.jpg",
     type: "Clothing",
     gender: "men",
-    rating: "4.4",
+    rating: 4.4,
   },
 
   {
@@ -210,7 +210,7 @@ export const products = [
       " https://www.tradeinn.com/f/13830/138307578_2/superdry-everest-bomber-jacket-refurbished.jpg",
     type: "Clothing",
     gender: "women",
-    rating: "4.8",
+    rating: 4.8,
   },
 
   {
@@ -224,7 +224,7 @@ export const products = [
       "https://img.shopstyle-cdn.com/sim/e7/fd/e7fd1e781157b558017c7a8174711aaf_best/double-match-graphic-print-shirt.jpg",
     type: "Clothing",
     gender: "men",
-    rating: "4",
+    rating: 4,
   },
 
   {
@@ -238,7 +238,7 @@ export const products = [
       "https://images.vestiairecollective.com/cdn-cgi/image/q=80,f=auto,/produit/28897198-1_1.jpg",
     type: "Clothing",
     gender: "men",
-    rating: "4.1",
+    rating: 4.1,
   },
 
   {
@@ -252,7 +252,7 @@ export const products = [
       "https://images.vestiairecollective.com/images/resized/q=80,f=auto,/produit/30589255-1_2.jpg",
     type: "Clothing",
     gender: "men",
-    rating: "4.9",
+    rating: 4.9,
   },
 
   {
@@ -265,7 +265,7 @@ export const products = [
     image: "https://images.flannels.com/images/products/58366018_l.jpg",
     type: "Clothing",
     gender: "men",
-    rating: "3.8",
+    rating: 3.8,
   },
 
   {
@@ -279,7 +279,7 @@ export const products = [
       "https://scene7.zumiez.com/is/image/zumiez/cat_max/RIPNDIP-Lucky-Nerm-Natural-Hoodie-_176726-CA.jpg",
     type: "Clothing",
     gender: "men",
-    rating: "3",
+    rating: 3,
   },
 
   {
@@ -293,6 +293,6 @@ export const products = [
       "https://cdn.shopify.com/s/files/1/0419/1525/products/1024x1024-Men-Sneakers-Premier-LowTop-Camel-063022-Flatlay.jpg?v=1657752200",
     type: "Clothing",
     gender: "men",
-    rating: "2",
+    rating: 2,
   },
 ];
