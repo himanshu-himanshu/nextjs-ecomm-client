@@ -55,12 +55,12 @@ export const products = [
   {
     id: uuid(),
     category: "Sweater",
-    title: "Pink Sweater",
+    title: "Funcky Rainbow Sweater",
     brand: "Simons",
     price: 50,
     trending: true,
     image:
-      "https://ae01.alicdn.com/kf/H0496ba41a870467d8f055fc63824e6efY.jpg?width=800&height=800&hash=1600",
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1662744659-jkerther-women-s-y2k-print-sweater-v-neck-long-sleeve-cardigan-1662744648.jpg",
     type: "Clothing",
     gender: "women",
     rating: 4.8,
@@ -295,4 +295,183 @@ export const products = [
     gender: "men",
     rating: 2,
   },
+
+  /*** WOMEN'S PRODUCTS */
+
+  {
+    id: uuid(),
+    category: "Skirt",
+    title: "Backless Short Skirt",
+    brand: "Simons",
+    price: 39,
+    trending: false,
+    image:
+      "https://ae03.alicdn.com/kf/Sb6e804185c79466b8b08f6c32716c15dj.jpg",
+    type: "Clothing",
+    gender: "women",
+    rating: 3.9,
+  },
+
+  
+  {
+    id: uuid(),
+    category: "Shirt",
+    title: "Cotton Loose Shirt",
+    brand: "Calvin Klein",
+    price: 55,
+    trending: false,
+    image:
+      "https://images.vestiairecollective.com/cdn-cgi/image/q=80,f=auto,/produit/27119662-1_1.jpg",
+    type: "Clothing",
+    gender: "women",
+    rating: 3.2,
+  },
+
+  {
+    id: uuid(),
+    category: "Pants",
+    title: "Floral Bell Bottom",
+    brand: "Mango",
+    price: 39,
+    trending: false,
+    image:
+      "https://i5.walmartimages.com/asr/246d1010-33fe-40db-bf35-9e0e4e23ed62.e78082fb81b0f2f008f2ea0f6de754da.jpeg",
+    type: "Clothing",
+    gender: "women",
+    rating: 5,
+  },
+
+  
+  {
+    id: uuid(),
+    category: "Pants",
+    title: "Gray Slim Fit",
+    brand: "Levis",
+    price: 99,
+    trending: false,
+    image:
+      "https://m.media-amazon.com/images/I/61MSUry5E8L._UL1300_.jpg",
+    type: "Clothing",
+    gender: "women",
+    rating: 4.5,
+  },
+
+  {
+    id: uuid(),
+    category: "Kurta",
+    title: "Straight Kurta",
+    brand: "H&M",
+    price: 110,
+    trending: false,
+    image:
+      "https://m.media-amazon.com/images/I/61PkrGlE4-S._UL1500_.jpg",
+    type: "Clothing",
+    gender: "women",
+    rating: 3.9,
+  },
+
+  
+  {
+    id: uuid(),
+    category: "Pants",
+    title: "Bottom Jogger Pants",
+    brand: "Reebok",
+    price: 99,
+    trending: false,
+    image:
+      "https://i5.walmartimages.com/asr/d330c10c-0021-4064-9415-197f843fd6d9.537d923b6974e4fdb8d7de21a3f00c7e.jpeg?odnHeight=450&odnWidth=450&odnBg=ffffff",
+    type: "Clothing",
+    gender: "women",
+    rating: 3.7,
+  },
+
+  {
+    id: uuid(),
+    category: "Pants",
+    title: "Ziper Wide Long",
+    brand: "Walmart",
+    price: 80,
+    trending: false,
+    image:
+      "https://i5.walmartimages.com/asr/ffa4c36b-6428-4c36-85c4-3fa56f262247.ebbcc7ac39df84a1679bdd1cabd9ae6e.jpeg",
+    type: "Clothing",
+    gender: "women",
+    rating: 1.9,
+  },
+
+  
+  {
+    id: uuid(),
+    category: "T-Shirt",
+    title: "Black Short Tshirt",
+    brand: "Nike",
+    price: 99,
+    trending: false,
+    image:
+      "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/7eeec792-972c-4510-b294-0dd426325893/sportswear-womens-slim-fit-cropped-t-shirt-gGzG7C.png",
+    type: "Clothing",
+    gender: "women",
+    rating: 4.1,
+  },
+
+  {
+    id: uuid(),
+    category: "Shirt",
+    title: "Corral Western",
+    brand: "American Eagle",
+    price: 140,
+    trending: false,
+    image:
+      "https://cdn.shopify.com/s/files/1/0316/8564/0325/products/RRWSOSR0Q7_1000x1000.progressive.jpg?v=1676065739",
+    type: "Clothing",
+    gender: "women",
+    rating: 3.9,
+  },
+
+  
+  {
+    id: uuid(),
+    category: "Hoodie",
+    title: "Yellow Sweatshirt",
+    brand: "Adidas",
+    price: 299,
+    trending: false,
+    image:
+      "https://m.media-amazon.com/images/I/51fF001VyiL._UX679_.jpg",
+    type: "Clothing",
+    gender: "women",
+    rating: 3.7,
+  },
+
+  {
+    id: uuid(),
+    category: "Hoodie",
+    title: "Cream Printed Jacket",
+    brand: "Banana Republic",
+    price: 198,
+    trending: false,
+    image:
+      "https://i.etsystatic.com/30642679/r/il/d8d68c/4405126393/il_fullxfull.4405126393_pnhy.jpg",
+    type: "Clothing",
+    gender: "women",
+    rating: 2.6,
+  },
+
+  
+  {
+    id: uuid(),
+    category: "Night Wear",
+    title: "Printed Cotton Suit",
+    brand: "H&M",
+    price: 46,
+    trending: false,
+    image:
+      "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61O7XPx3LJL._UX569_.jpg",
+    type: "Clothing",
+    gender: "women",
+    rating: 3.1,
+  },
+
+  
+
 ];
