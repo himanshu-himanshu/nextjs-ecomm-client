@@ -1,8 +1,6 @@
 import Head from "next/head";
-import Quote from "../../../components/banner/Quote";
 
-import Navbar from "../../../components/navbar/Navbar";
-import Footer from "../../../components/footer/Footer";
+import { Quote, Navbar, Footer } from "../../../components";
 import Men from "./Men";
 
 const index = () => {

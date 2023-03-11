@@ -1,11 +1,13 @@
 import Head from "next/head";
 
-import Banner from "../components/banner/Banner";
-import Quote from "../components/banner/Quote";
-import Navbar from "../components/navbar/Navbar";
-import Trending from "../components/trending/Trending";
-import GenderSection from "../components/sections/GenderSection";
-import Footer from "../components/footer/Footer";
+import {
+  Navbar,
+  Banner,
+  Quote,
+  Trending,
+  GenderSection,
+  Footer,
+} from "../components";
 
 export default function Home() {
   return (
