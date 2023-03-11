@@ -1,12 +1,13 @@
+import React from "react";
+
 import Head from "next/head";
+import Quote from "../../../components/banner/Quote";
 
-import Quote from "../components/banner/Quote";
-import Navbar from "../components/navbar/Navbar";
-import GenderSection from "../components/sections/GenderSection";
-import Footer from "../components/footer/Footer";
-import Women from "../components/women/Women";
+import Navbar from "../../../components/navbar/Navbar";
+import Footer from "../../../components/footer/Footer";
+import Women from "./Women";
 
-const WomenProducts = () => {
+const index = () => {
   return (
     <>
       <Head>
@@ -22,4 +23,4 @@ const WomenProducts = () => {
   );
 };
 
-export default WomenProducts;
+export default index;

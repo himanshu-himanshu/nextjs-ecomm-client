@@ -11,8 +11,8 @@ const Navbar = () => {
 
   const MENU_LIST = [
     { text: "Home", href: "/" },
-    { text: "Men", href: "men-products" },
-    { text: "Women", href: "women-products" },
+    { text: "Men", href: "/products/men" },
+    { text: "Women", href: "/products/women" },
   ];
 
   const handleOpenCart = () => {

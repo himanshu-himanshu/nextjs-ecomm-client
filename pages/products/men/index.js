@@ -1,11 +1,11 @@
 import Head from "next/head";
-import Quote from "../components/banner/Quote";
+import Quote from "../../../components/banner/Quote";
 
-import Navbar from "../components/navbar/Navbar";
-import Footer from "../components/footer/Footer";
-import Men from "../components/men/Men";
+import Navbar from "../../../components/navbar/Navbar";
+import Footer from "../../../components/footer/Footer";
+import Men from "./Men";
 
-const MenProducts = () => {
+const index = () => {
   return (
     <>
       <Head>
@@ -21,4 +21,4 @@ const MenProducts = () => {
   );
 };
 
-export default MenProducts;
+export default index;
