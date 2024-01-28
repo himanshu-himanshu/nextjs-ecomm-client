@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Slider, { Range } from "rc-slider";
 import "rc-slider/assets/index.css";
-//import StarIcon from "../../../utils/StarIcon";
 import { StarIcon } from "@heroicons/react/24/solid";
 
 const Filters = ({ productsArray }) => {
@@ -71,31 +70,31 @@ const Filters = ({ productsArray }) => {
         </h1>
         <div className="w-full flex items-start flex-col space-y-3 py-2">
           <div className="flex gap-1 hover:cursor-pointer">
-            <StarIcon class="h-5 w-5 text-yellow-500" />
-            <StarIcon class="h-5 w-5 text-gray-200" />
-            <StarIcon class="h-5 w-5 text-gray-200" />
-            <StarIcon class="h-5 w-5 text-gray-200" />
+            <StarIcon className="h-5 w-5 text-yellow-500" />
+            <StarIcon className="h-5 w-5 text-gray-200" />
+            <StarIcon className="h-5 w-5 text-gray-200" />
+            <StarIcon className="h-5 w-5 text-gray-200" />
             <span className="text-gray-500 font-Gruppo font-bold">& Up</span>
           </div>
           <div className="flex gap-1 hover:cursor-pointer">
-            <StarIcon class="h-5 w-5 text-yellow-500" />
-            <StarIcon class="h-5 w-5 text-yellow-500" />
-            <StarIcon class="h-5 w-5 text-gray-200" />
-            <StarIcon class="h-5 w-5 text-gray-200" />
+            <StarIcon className="h-5 w-5 text-yellow-500" />
+            <StarIcon className="h-5 w-5 text-yellow-500" />
+            <StarIcon className="h-5 w-5 text-gray-200" />
+            <StarIcon className="h-5 w-5 text-gray-200" />
             <span className="text-gray-500 font-Gruppo font-bold">& Up</span>
           </div>
           <div className="flex gap-1 hover:cursor-pointer">
-            <StarIcon class="h-5 w-5 text-yellow-500" />
-            <StarIcon class="h-5 w-5 text-yellow-500" />
-            <StarIcon class="h-5 w-5 text-yellow-500" />
-            <StarIcon class="h-5 w-5 text-gray-200" />
+            <StarIcon className="h-5 w-5 text-yellow-500" />
+            <StarIcon className="h-5 w-5 text-yellow-500" />
+            <StarIcon className="h-5 w-5 text-yellow-500" />
+            <StarIcon className="h-5 w-5 text-gray-200" />
             <span className="text-gray-500 font-Gruppo font-bold">& Up</span>
           </div>
           <div className="flex gap-1 hover:cursor-pointer">
-            <StarIcon class="h-5 w-5 text-yellow-500" />
-            <StarIcon class="h-5 w-5 text-yellow-500" />
-            <StarIcon class="h-5 w-5 text-yellow-500" />
-            <StarIcon class="h-5 w-5 text-yellow-500" />
+            <StarIcon className="h-5 w-5 text-yellow-500" />
+            <StarIcon className="h-5 w-5 text-yellow-500" />
+            <StarIcon className="h-5 w-5 text-yellow-500" />
+            <StarIcon className="h-5 w-5 text-yellow-500" />
             <span className="text-gray-500 font-Gruppo font-bold">& Up</span>
           </div>
         </div>
