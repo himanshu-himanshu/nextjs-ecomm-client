@@ -4,6 +4,7 @@ import Cart from "./Cart";
 import MobileMenu from "./MobileMenu";
 import OpenCart from "./OpenCart";
 import OpenMenu from "./OpenMenu";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [openCart, setOpenCart] = useState(false);
@@ -19,6 +20,7 @@ const Navbar = () => {
     document.body.style.overflow = "hidden";
     setOpenCart(true);
   };
+
   const handleCloseCart = () => {
     document.body.style.overflow = "unset";
     setOpenCart(false);
@@ -57,12 +59,16 @@ const Navbar = () => {
       <div className="flex flex-row justify-end items-center space-x-2 md:space-x-4 w-1/3">
         <Cart handleOpenCart={handleOpenCart} />
       </div>
-      {openCart && (
-        <OpenCart
-          handleOpenCart={handleOpenCart}
-          handleCloseCart={handleCloseCart}
-        />
-      )}
+
+      <AnimatePresence initial={false}>
+        {openCart && (
+          <OpenCart
+            handleOpenCart={handleOpenCart}
+            handleCloseCart={handleCloseCart}
+            openCart={openCart}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };

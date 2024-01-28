@@ -19,12 +19,17 @@ const Product = ({ item }) => {
       dispatch(addItemToCart(item));
       setAddingToCart(false);
       toast.custom(
-        <div className="px-6 py-6 bg-primary/50 text-secondary font-Borui rounded-xl flex flex-row space-x-4 shadow-sm duration-300">
+        <motion.div
+          initial={{ x: 400 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="px-6 py-6 bg-primary/50 text-secondary font-Borui rounded-xl flex flex-row space-x-4 shadow-sm duration-300"
+        >
           <span className="tracking-wide"> Item added to cart</span>
           <ShoppingBagIcon class="h-6 w-6 text-secondary" />
-        </div>
+        </motion.div>
       );
-    }, 500);
+    }, 700);
   };
 
   return (
