@@ -20,9 +20,22 @@ const cartSlice = createSlice({
 
     /** Function to add Item to the cart */
     addItemToCart: (state, action) => {
-      let item = { ...action.payload, quantity: 1 };
-      state.cartItems = [...state.cartItems, item];
-      state.totalItems = ++state.totalItems;
+      const { id } = action.payload;
+
+      const existingItem = state.cartItems.find((item) => item.id === id);
+
+      console.log(existingItem);
+
+      if (existingItem) {
+        // If the item already exists in the cart, update its quantity
+        existingItem.quantity = existingItem.quantity + 1;
+        state.totalItems = ++state.totalItems;
+      } else {
+        // If the item is not in the cart, add it
+        let item = { ...action.payload, quantity: 1 };
+        state.cartItems = [...state.cartItems, item];
+        state.totalItems = ++state.totalItems;
+      }
     },
 
     /** Function to calculate total items quantity */

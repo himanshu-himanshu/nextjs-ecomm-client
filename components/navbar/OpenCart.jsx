@@ -4,20 +4,16 @@ import CloseButton from "../../utils/CloseButton";
 import Cart from "./Cart";
 import { products } from "../../utils/products";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  ShoppingCartIcon,
-  MinusIcon,
-  PlusIcon,
-  TrashIcon,
-} from "@heroicons/react/24/outline";
+import { MinusIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
+import EmptyCart from "../EmptyCart";
 
 const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
   const dispatch = useDispatch();
   const items = useSelector((store) => store.cart.cartItems);
   console.log(items);
   return (
-    <motion.div>
+    <>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.5 }}
@@ -33,6 +29,7 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
         exit={{ x: 900, opacity: 0 }}
         className="absolute h-full bg-white top-0 right-0 w-full sm:min-w-[500px] sm:w-1/3 overflow-hidden z-40"
       >
+        {/**  Cart header */}
         <div className="flex flex-row justify-between items-center px-6 py-6 h-[10vh] border-b">
           <Cart handleOpenCart={handleOpenCart} />
 
@@ -43,6 +40,8 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
             <CloseButton />
           </div>
         </div>
+
+        {/**  Div to render products inside the cart */}
         <div className="h-[90vh]">
           <div
             className={`flex flex-col ${
@@ -50,17 +49,7 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
             } justify-center items-center`}
           >
             {/** If there is no Item in cart render the div below */}
-            {items.length === 0 && (
-              <div className="flex flex-col items-center justify-center space-y-4">
-                <ShoppingCartIcon class="h-24 w-24 text-primary" />
-                <h1 className="text-2xl md:text-3xl font-Gruppo tracking-tight text-primary flex justify-center items-center">
-                  Your cart is currently empty !
-                </h1>
-                <p className="font-Gruppo tracking-tight text-gray-600 text-lg max-w-sm text-center">
-                  Go ahead and explore top categories to make your choice.
-                </p>
-              </div>
-            )}
+            {items.length === 0 && <EmptyCart />}
 
             {/** Render if there is anything added to the cart */}
             {items.length !== 0 && (
@@ -90,7 +79,7 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
                         <span className="flex flex-row items-center justify-center px-2 space-x-4 border">
                           <MinusIcon className="h-4 w-4 text-gray-500 hover:cursor-pointer" />
                           <span className="text-lg font-Gruppo font-extrabold">
-                            3
+                            {item.quantity}
                           </span>
                           <PlusIcon className="h-4 w-4 text-gray-500 hover:cursor-pointer" />
                         </span>
@@ -104,18 +93,19 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
               </div>
             )}
           </div>
-          {/*** Checkout div below */}
+
+          {/*** Checkout div below only show if there is anything added to the cart */}
           {items.length !== 0 && (
             <div className="w-full h-[25%] p-4">
               <h1 className="text-[14px] tracking-wide flex justify-end items-end font-Gruppo mt-4 mb-6">
                 <span>Shipping & taxes calculated at checkout</span>
               </h1>
               <div className="w-full font-bold uppercase px-6 py-5 bg-primary/90 border border-primary text-secondary hover:bg-primary hover:text-white duration-200 font-Gruppo flex justify-center items-center space-x-2 hover:cursor-pointer shadow-sm">
-                <button className="text-lg tracking-widest uppercase">
+                <button className="text-lg tracking-wider uppercase">
                   Checkout
                 </button>
                 <CheckBadgeIcon className="h-5 w-5" />
-                <span className="text-lg font-semibold tracking-wider">
+                <span className="text-lg font-extrabold tracking-wider">
                   $400.00 CAD
                 </span>
               </div>
@@ -123,7 +113,7 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
           )}
         </div>
       </motion.div>
-    </motion.div>
+    </>
   );
 };
 

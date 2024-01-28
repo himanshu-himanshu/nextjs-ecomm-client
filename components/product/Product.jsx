@@ -20,13 +20,13 @@ const Product = ({ item }) => {
       setAddingToCart(false);
       toast.custom(
         <motion.div
-          initial={{ x: 400 }}
-          animate={{ x: 0 }}
+          initial={{ y: -400 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
-          className="px-6 py-6 bg-primary/50 text-secondary font-Borui rounded-xl flex flex-row space-x-4 shadow-sm duration-300"
+          className="px-6 py-6 bg-[#43766C] text-secondary font-Borui rounded-xl flex flex-row space-x-4 duration-300"
         >
-          <span className="tracking-wide"> Item added to cart</span>
-          <ShoppingBagIcon class="h-6 w-6 text-secondary" />
+          <span className="tracking-wider"> Item added to cart</span>
+          <ShoppingBagIcon className="h-6 w-6 text-secondary" />
         </motion.div>
       );
     }, 700);
@@ -35,7 +35,7 @@ const Product = ({ item }) => {
   return (
     <>
       <Toaster
-        position="top-right"
+        position="top-center"
         toastOptions={{
           duration: 700,
         }}
