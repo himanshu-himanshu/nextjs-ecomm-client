@@ -447,18 +447,4 @@ export const products = [
     gender: "women",
     rating: 2.6,
   },
-
-  // {
-  //   id: uuid(),
-  //   category: "Night Wear",
-  //   title: "Printed Cotton Suit",
-  //   brand: "H&M",
-  //   price: 46,
-  //   trending: false,
-  //   image:
-  //     "https://i.pinimg.com/736x/15/58/aa/1558aa00dc0795f50319d0395ad9ba7e.jpg",
-  //   type: "Clothing",
-  //   gender: "women",
-  //   rating: 3.1,
-  // },
 ];

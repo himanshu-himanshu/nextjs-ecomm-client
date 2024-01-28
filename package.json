@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@heroicons/react": "^2.0.13",
+    "@heroicons/react": "^2.1.1",
     "@reduxjs/toolkit": "^1.9.3",
     "framer-motion": "^7.6.5",
     "next": "13.0.2",
