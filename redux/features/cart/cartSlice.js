@@ -11,7 +11,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    /** Funtion to reset cart */
+    /** Function to reset cart */
     clearCart: (state) => {
       state.cartItems = [];
       state.amount = 0;

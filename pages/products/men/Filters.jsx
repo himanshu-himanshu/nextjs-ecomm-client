@@ -18,6 +18,8 @@ const Filters = ({ productsArray }) => {
     );
   }, [productsArray]);
 
+  const sortCategory = () => {};
+
   return (
     <div className="hidden h-full flex-col lg:flex w-1/5 py-12 px-4">
       <div className=" w-full p-2 mb-4">
@@ -29,7 +31,7 @@ const Filters = ({ productsArray }) => {
             className="w-full flex items-center flex-row space-x-2 py-1"
             key={index}
           >
-            <input type="checkbox" />
+            <input type="checkbox" onClick={() => sortCategory()} />
             <span className="text-gray-800 font-Gruppo font-bold">
               {category}
             </span>

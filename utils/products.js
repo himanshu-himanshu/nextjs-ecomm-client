@@ -305,14 +305,12 @@ export const products = [
     brand: "Simons",
     price: 39,
     trending: false,
-    image:
-      "https://ae03.alicdn.com/kf/Sb6e804185c79466b8b08f6c32716c15dj.jpg",
+    image: "https://ae03.alicdn.com/kf/Sb6e804185c79466b8b08f6c32716c15dj.jpg",
     type: "Clothing",
     gender: "women",
     rating: 3.9,
   },
 
-  
   {
     id: uuid(),
     category: "Shirt",
@@ -341,7 +339,6 @@ export const products = [
     rating: 5,
   },
 
-  
   {
     id: uuid(),
     category: "Pants",
@@ -349,8 +346,7 @@ export const products = [
     brand: "Levis",
     price: 99,
     trending: false,
-    image:
-      "https://m.media-amazon.com/images/I/61MSUry5E8L._UL1300_.jpg",
+    image: "https://m.media-amazon.com/images/I/61MSUry5E8L._UL1300_.jpg",
     type: "Clothing",
     gender: "women",
     rating: 4.5,
@@ -363,14 +359,12 @@ export const products = [
     brand: "H&M",
     price: 110,
     trending: false,
-    image:
-      "https://m.media-amazon.com/images/I/61PkrGlE4-S._UL1500_.jpg",
+    image: "https://m.media-amazon.com/images/I/61PkrGlE4-S._UL1500_.jpg",
     type: "Clothing",
     gender: "women",
     rating: 3.9,
   },
 
-  
   {
     id: uuid(),
     category: "Pants",
@@ -399,7 +393,6 @@ export const products = [
     rating: 1.9,
   },
 
-  
   {
     id: uuid(),
     category: "T-Shirt",
@@ -428,7 +421,6 @@ export const products = [
     rating: 3.9,
   },
 
-  
   {
     id: uuid(),
     category: "Hoodie",
@@ -436,8 +428,7 @@ export const products = [
     brand: "Adidas",
     price: 299,
     trending: false,
-    image:
-      "https://m.media-amazon.com/images/I/51fF001VyiL._UX679_.jpg",
+    image: "https://m.media-amazon.com/images/I/51fF001VyiL._UX679_.jpg",
     type: "Clothing",
     gender: "women",
     rating: 3.7,
@@ -457,21 +448,17 @@ export const products = [
     rating: 2.6,
   },
 
-  
-  {
-    id: uuid(),
-    category: "Night Wear",
-    title: "Printed Cotton Suit",
-    brand: "H&M",
-    price: 46,
-    trending: false,
-    image:
-      "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61O7XPx3LJL._UX569_.jpg",
-    type: "Clothing",
-    gender: "women",
-    rating: 3.1,
-  },
-
-  
-
+  // {
+  //   id: uuid(),
+  //   category: "Night Wear",
+  //   title: "Printed Cotton Suit",
+  //   brand: "H&M",
+  //   price: 46,
+  //   trending: false,
+  //   image:
+  //     "https://i.pinimg.com/736x/15/58/aa/1558aa00dc0795f50319d0395ad9ba7e.jpg",
+  //   type: "Clothing",
+  //   gender: "women",
+  //   rating: 3.1,
+  // },
 ];
