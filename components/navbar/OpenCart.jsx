@@ -1,17 +1,38 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import CloseButton from "../../utils/CloseButton";
 import Cart from "./Cart";
-import { products } from "../../utils/products";
 import { useDispatch, useSelector } from "react-redux";
 import { MinusIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 import EmptyCart from "../EmptyCart";
+import {
+  updateQuantity,
+  deleteItem,
+} from "../../redux/features/cart/cartSlice";
 
 const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
   const dispatch = useDispatch();
   const items = useSelector((store) => store.cart.cartItems);
-  console.log(items);
+  const totalAmount = useSelector((store) => store.cart.amount);
+
+  const updateQuantityFunction = (id, type) => {
+    dispatch(
+      updateQuantity({
+        id: id,
+        type: type,
+      })
+    );
+  };
+
+  const handleDeleteItem = (id) => {
+    dispatch(
+      deleteItem({
+        id: id,
+      })
+    );
+  };
+
   return (
     <>
       <motion.div
@@ -77,14 +98,27 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
                           ${item.price}
                         </h1>
                         <span className="flex flex-row items-center justify-center px-2 space-x-4 border">
-                          <MinusIcon className="h-4 w-4 text-gray-500 hover:cursor-pointer" />
-                          <span className="text-lg font-Gruppo font-extrabold">
+                          <MinusIcon
+                            className="h-4 w-4 text-gray-500 hover:cursor-pointer"
+                            onClick={() =>
+                              updateQuantityFunction(item.id, "DECREASE")
+                            }
+                          />
+                          <span className="text-md font-Gruppo font-extrabold p-1 min-w-[30px] mx-auto text-center">
                             {item.quantity}
                           </span>
-                          <PlusIcon className="h-4 w-4 text-gray-500 hover:cursor-pointer" />
+                          <PlusIcon
+                            className="h-4 w-4 text-gray-500 hover:cursor-pointer"
+                            onClick={() =>
+                              updateQuantityFunction(item.id, "INCREASE")
+                            }
+                          />
                         </span>
                         <div>
-                          <TrashIcon className="h-6 w-6 text-pink-800 hover:cursor-pointer" />
+                          <TrashIcon
+                            className="h-6 w-6 text-pink-800 hover:cursor-pointer"
+                            onClick={() => handleDeleteItem(item.id)}
+                          />
                         </div>
                       </div>
                     </div>
@@ -100,13 +134,13 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
               <h1 className="text-[14px] tracking-wide flex justify-end items-end font-Gruppo mt-4 mb-6">
                 <span>Shipping & taxes calculated at checkout</span>
               </h1>
-              <div className="w-full font-bold uppercase px-6 py-5 bg-primary/90 border border-primary text-secondary hover:bg-primary hover:text-white duration-200 font-Gruppo flex justify-center items-center space-x-2 hover:cursor-pointer shadow-sm">
+              <div className="w-full font-bold uppercase px-6 py-5 bg-primary/90 border border-primary text-secondary hover:bg-primary hover:text-white duration-200 font-Gruppo flex justify-center items-center space-x-3 hover:cursor-pointer shadow-sm">
                 <button className="text-lg tracking-wider uppercase">
                   Checkout
                 </button>
                 <CheckBadgeIcon className="h-5 w-5" />
-                <span className="text-lg font-extrabold tracking-wider">
-                  $400.00 CAD
+                <span className="text-lg font-extrabold tracking-wider w-[120px] h-full">
+                  ${totalAmount} CAD
                 </span>
               </div>
             </div>
