@@ -1,16 +1,7 @@
-import React, { useState, useEffect } from "react";
-
-import { products } from "../../../utils/products";
 import Product from "../../../components/product/Product";
 import Filters from "./Filters";
 
-const Men = () => {
-  const [productsArray, setProductsArray] = useState([]);
-
-  useEffect(() => {
-    setProductsArray(products.filter((product) => product.gender === "men"));
-  }, []);
-
+const Men = ({ productsArray }) => {
   return (
     <div className="h-full w-full py-12 px-6 border-t mt-4">
       <div className="h-full w-full flex justify-start p-4 px-6">

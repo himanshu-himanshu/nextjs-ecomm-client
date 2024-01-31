@@ -40,7 +40,7 @@ const Filters = ({ productsArray }) => {
         ))}
       </div>
 
-      <div className="w-full p-2 mb-4">
+      <div className="w-full p-2 mb-4 border-t">
         <h1 className="text-lg font-Borui font-light text-gray-700 mb-4">
           Brand
         </h1>

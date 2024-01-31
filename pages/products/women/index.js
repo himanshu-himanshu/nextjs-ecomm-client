@@ -1,9 +1,25 @@
 import Head from "next/head";
 
+import React, { useState, useEffect } from "react";
 import { Quote, Navbar, Footer } from "../../../components";
+import { products } from "../../../utils/products";
+import { ColorRing } from "react-loader-spinner";
 import Women from "./Women";
 
 const index = () => {
+  const [productsArray, setProductsArray] = useState([]);
+  const [productsLoading, setProductsLoading] = useState(false);
+
+  useEffect(() => {
+    setProductsLoading(true);
+    setTimeout(() => {
+      setProductsLoading(false);
+      setProductsArray(
+        products.filter((product) => product.gender === "women")
+      );
+    }, 1000);
+  }, []);
+
   return (
     <>
       <Head>
@@ -12,9 +28,29 @@ const index = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <Women />
-      <Quote />
-      <Footer />
+      {productsLoading && (
+        <div className="w-full min-h-[90vh] flex flex-col justify-center items-center">
+          <ColorRing
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="color-ring-loading"
+            wrapperStyle={{}}
+            wrapperClass="color-ring-wrapper"
+            colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+          />
+          <p className="font-Gruppo text-gray-700">
+            The joy of dressing is an art.
+          </p>
+        </div>
+      )}
+      {!productsLoading && (
+        <>
+          <Women productsArray={productsArray} />
+          <Quote />
+          <Footer />
+        </>
+      )}
     </>
   );
 };

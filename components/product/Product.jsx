@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import {
-  addItemToCart,
-  calculateTotalItemsQuantity,
-} from "../../redux/features/cart/cartSlice";
+import { addItemToCart } from "../../redux/features/cart/cartSlice";
 import { toast, Toaster } from "react-hot-toast";
-import { ThreeDots } from "react-loader-spinner";
-import { ShoppingBagIcon, Cog8ToothIcon } from "@heroicons/react/24/outline";
+import { Cog8ToothIcon } from "@heroicons/react/24/outline";
 import { StarIcon, HeartIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
+import CustomToast from "../../utils/CustomToast";
 
 const Product = ({ item }) => {
   const [addingToCart, setAddingToCart] = useState(false);
@@ -19,17 +16,7 @@ const Product = ({ item }) => {
     setTimeout(() => {
       dispatch(addItemToCart(item));
       setAddingToCart(false);
-      toast.custom(
-        <motion.div
-          initial={{ y: -400 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.5, ease: "anticipate" }}
-          className="px-6 py-6 bg-[#43766C] text-secondary font-Borui rounded-sm flex flex-row space-x-4 duration-300"
-        >
-          <span className="tracking-wider"> Item added to cart</span>
-          <ShoppingBagIcon className="h-6 w-6 text-secondary" />
-        </motion.div>
-      );
+      toast.custom(<CustomToast />);
     }, 700);
   };
 
@@ -41,7 +28,12 @@ const Product = ({ item }) => {
           duration: 700,
         }}
       />
-      <div className=" flex flex-col justify-center items-center hover:cursor-pointer duration-300 border border-gray-100/70 rounded-sm">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7, ease: "anticipate" }}
+        className=" flex flex-col justify-center items-center hover:cursor-pointer duration-300 border border-gray-100/70 rounded-sm"
+      >
         <div className="group relative duration-300 px-2 py-4">
           <img src={item.image} alt="" className="w-full h-80" />
           <div className="hidden absolute h-full w-full top-0 left-0 group-hover:flex justify-center items-center duration-300 bg-gray-100/40">
@@ -83,7 +75,7 @@ const Product = ({ item }) => {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
