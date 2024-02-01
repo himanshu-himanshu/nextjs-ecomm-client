@@ -10,7 +10,7 @@ const EmptyCart = () => {
       transition={{ type: "spring", damping: 10 }}
       className="flex flex-col items-center justify-center space-y-4"
     >
-      <ShoppingCartIcon class="h-24 w-24 text-primary/70" />
+      <ShoppingCartIcon className="h-24 w-24 text-primary/70" />
       <h1 className="text-2xl md:text-3xl font-Gruppo tracking-tight text-primary flex justify-center items-center">
         Your cart is currently empty !
       </h1>

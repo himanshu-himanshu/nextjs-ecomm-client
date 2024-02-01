@@ -3,7 +3,7 @@ import Slider, { Range } from "rc-slider";
 import "rc-slider/assets/index.css";
 import { StarIcon } from "@heroicons/react/24/solid";
 
-const Filters = ({ productsArray }) => {
+const Filters = ({ productsArray, handleCategorySelectionParent }) => {
   const [categoriesArray, setCategoriesArray] = useState([]);
   const [brandsArray, setBrandsArray] = useState([]);
 
@@ -19,7 +19,9 @@ const Filters = ({ productsArray }) => {
     );
   }, [productsArray]);
 
-  const sortCategory = () => {};
+  const handleCategorySelection = (category) => {
+    handleCategorySelectionParent(category);
+  };
 
   return (
     <div className="hidden h-full flex-col lg:flex w-1/5 py-12 px-4">
@@ -32,7 +34,13 @@ const Filters = ({ productsArray }) => {
             className="w-full flex items-center flex-row space-x-2 py-1"
             key={index}
           >
-            <input type="checkbox" onClick={() => sortCategory()} />
+            <input
+              type="checkbox"
+              onClick={() => {
+                handleCategorySelection(category);
+              }}
+              className="hover:cursor-pointer"
+            />
             <span className="text-gray-800 font-Gruppo font-bold">
               {category}
             </span>
