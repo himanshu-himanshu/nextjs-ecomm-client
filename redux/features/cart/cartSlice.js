@@ -25,19 +25,15 @@ const cartSlice = createSlice({
       const existingItem = state.cartItems.find((item) => item.id === id);
 
       if (existingItem) {
-        // If the item already exists in the cart, update its quantity
-        console.log("Already");
-        existingItem.quantity = existingItem.quantity + 1;
-        state.totalItems = ++state.totalItems;
-        state.amount = state.amount + existingItem.price;
+        existingItem.quantity += 1;
+        state.amount += existingItem.price;
       } else {
-        // If the item is not in the cart, add it
-        console.log("Not Already");
-        let item = { ...action.payload, quantity: 1 };
-        state.cartItems = [...state.cartItems, item];
-        state.totalItems = ++state.totalItems;
-        state.amount = state.amount + item.price;
+        const newItem = { ...action.payload, quantity: 1 };
+        state.cartItems.push(newItem);
+        state.amount += newItem.price;
       }
+
+      state.totalItems += 1;
     },
 
     /** Function to update quantity of the items already in the cart */
@@ -45,19 +41,18 @@ const cartSlice = createSlice({
       const { id, type } = action.payload;
 
       const existingItem = state.cartItems.find((item) => item.id === id);
-
       if (type === "INCREASE") {
-        existingItem.quantity = existingItem.quantity + 1;
-        state.totalItems = ++state.totalItems;
-        state.amount = state.amount + existingItem.price;
+        existingItem.quantity += 1;
+        state.totalItems += 1;
+        state.amount += existingItem.price;
       }
-      if (type === "DECREASE") {
-        existingItem.quantity = existingItem.quantity - 1;
-        state.totalItems = --state.totalItems;
-        state.amount = state.amount - existingItem.price;
 
-        // While reducing the quantity if it become 0, remove it from cart
-        if (existingItem.quantity == 0) {
+      if (type === "DECREASE") {
+        existingItem.quantity -= 1;
+        state.totalItems -= 1;
+        state.amount -= existingItem.price;
+
+        if (existingItem.quantity === 0) {
           state.cartItems = state.cartItems.filter((item) => item.id !== id);
         }
       }
@@ -71,19 +66,14 @@ const cartSlice = createSlice({
 
       if (existingItem) {
         state.cartItems = state.cartItems.filter((item) => item.id !== id);
-        state.totalItems = state.totalItems - existingItem.quantity;
-        state.amount =
-          state.amount - existingItem.price * existingItem.quantity;
+        state.totalItems -= existingItem.quantity;
+        state.amount -= existingItem.price * existingItem.quantity;
       }
-
-      return;
     },
 
     /** Function to calculate total items quantity */
     calculateTotalItemsQuantity: (state) => {
-      let total = 0;
-      total = state.cartItems.length;
-      state.totalItems = total;
+      state.totalItems = state.cartItems.length;
     },
   },
 });

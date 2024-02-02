@@ -11,7 +11,7 @@ const Product = ({ item }) => {
   const [addingToCart, setAddingToCart] = useState(false);
   const dispatch = useDispatch();
 
-  const addItemToCartFunction = () => {
+  const addToCart = () => {
     setAddingToCart(true);
     setTimeout(() => {
       dispatch(addItemToCart(item));
@@ -37,19 +37,16 @@ const Product = ({ item }) => {
         <div className="group relative duration-300 px-2 py-4">
           <img src={item.image} alt="" className="w-full h-80" />
           <div className="hidden absolute h-full w-full top-0 left-0 group-hover:flex justify-center items-center duration-300 bg-gray-100/40">
-            {!addingToCart && (
+            {!addingToCart ? (
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-[200px] py-6 px-2 bg-gray-100 uppercase tracking-wide duration-300 hover:bg-black/90 hover:text-gray-100"
-                onClick={() => {
-                  addItemToCartFunction();
-                }}
+                onClick={addToCart}
               >
                 Add to Cart
               </motion.button>
-            )}
-            {addingToCart && (
+            ) : (
               <button className="w-[200px] py-5 px-2 bg-secondary uppercase tracking-wide duration-300 flex justify-center items-center">
                 <Cog8ToothIcon className="h-8 w-8 text-primary animate-spin" />
               </button>
