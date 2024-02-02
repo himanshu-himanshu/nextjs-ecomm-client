@@ -1,3 +1,5 @@
+"use client";
+
 import Product from "../../../components/product/Product";
 import Filters from "./Filters";
 import React, { useState, useEffect } from "react";
@@ -5,34 +7,25 @@ import { ThreeDots } from "react-loader-spinner";
 
 const Men = ({ productsArray }) => {
   const [filterInProcess, setFilterInProcess] = useState(false);
-
   const [unfilteredProductsArray, setUnfilteredProductsArray] = useState([]);
-
   const [selectedCategoriesArray, setSelectedCategoriesArray] = useState([]);
 
   useEffect(() => {
-    setUnfilteredProductsArray(productsArray);
-  }, []);
+    if (selectedCategoriesArray.length > 0) {
+      setFilterInProcess(true);
+      const filteredProducts = productsArray.filter((product) =>
+        selectedCategoriesArray.includes(product.category)
+      );
 
-  const handleCategorySelectionParent = (category) => {
-    setFilterInProcess(true);
-    // const newSelectedCategories = selectedCategoriesArray.includes(category)
-    //   ? selectedCategoriesArray.filter((b) => b !== category)
-    //   : [...selectedCategoriesArray, category];
-
-    // setSelectedCategoriesArray(newSelectedCategories);
-
-    // const lol = selectedCategoriesArray.map((category) => {
-    //   unfilteredProductsArray.filter((product) => product.category == category);
-    // });
-    const lol = productsArray.filter((product) => product.category == category);
-    setTimeout(() => {
-      setUnfilteredProductsArray(lol);
-      setFilterInProcess(false);
-    }, 500);
-
-    console.log(lol);
-  };
+      setTimeout(() => {
+        setUnfilteredProductsArray(filteredProducts);
+        setFilterInProcess(false);
+      }, 500);
+    } else {
+      // Reset to all products if no categories are selected
+      setUnfilteredProductsArray(productsArray);
+    }
+  }, [selectedCategoriesArray, productsArray]);
 
   return (
     <div className="h-full w-full py-12 px-6 border-t mt-4">
@@ -42,7 +35,8 @@ const Men = ({ productsArray }) => {
       <div className="h-full w-full flex flex-row">
         <Filters
           productsArray={productsArray}
-          handleCategorySelectionParent={handleCategorySelectionParent}
+          selectedCategoriesArray={selectedCategoriesArray}
+          setSelectedCategoriesArray={setSelectedCategoriesArray}
         />
         <div className="w-full lg:w-4/5 py-12 px-6">
           <div

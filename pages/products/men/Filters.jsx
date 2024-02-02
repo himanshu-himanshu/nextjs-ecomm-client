@@ -1,9 +1,15 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import Slider, { Range } from "rc-slider";
 import "rc-slider/assets/index.css";
 import { StarIcon } from "@heroicons/react/24/solid";
 
-const Filters = ({ productsArray, handleCategorySelectionParent }) => {
+const Filters = ({
+  productsArray,
+  selectedCategoriesArray,
+  setSelectedCategoriesArray,
+}) => {
   const [categoriesArray, setCategoriesArray] = useState([]);
   const [brandsArray, setBrandsArray] = useState([]);
 
@@ -20,7 +26,13 @@ const Filters = ({ productsArray, handleCategorySelectionParent }) => {
   }, [productsArray]);
 
   const handleCategorySelection = (category) => {
-    handleCategorySelectionParent(category);
+    setSelectedCategoriesArray((prevBrands) => {
+      if (prevBrands.includes(category)) {
+        return prevBrands.filter((b) => b !== category);
+      } else {
+        return [...prevBrands, category];
+      }
+    });
   };
 
   return (
@@ -36,9 +48,10 @@ const Filters = ({ productsArray, handleCategorySelectionParent }) => {
           >
             <input
               type="checkbox"
-              onClick={() => {
+              onChange={() => {
                 handleCategorySelection(category);
               }}
+              checked={selectedCategoriesArray.includes(category)}
               className="hover:cursor-pointer"
             />
             <span className="text-gray-800 font-Gruppo font-bold">
