@@ -15,19 +15,17 @@ const Men = ({ productsArray }) => {
   }, []);
 
   const handleCategorySelectionParent = (category) => {
-    {
-      /**const newSelectedCategories = selectedCategoriesArray.includes(category)
-      ? selectedCategoriesArray.filter((b) => b !== category)
-      : [...selectedCategoriesArray, category];
-
-    setSelectedCategoriesArray(newSelectedCategories);
-  console.log(category);*/
-    }
     setFilterInProcess(true);
-    const lol = unfilteredProductsArray.filter(
-      (product) => product.category == "Hoodie"
-    );
+    // const newSelectedCategories = selectedCategoriesArray.includes(category)
+    //   ? selectedCategoriesArray.filter((b) => b !== category)
+    //   : [...selectedCategoriesArray, category];
 
+    // setSelectedCategoriesArray(newSelectedCategories);
+
+    // const lol = selectedCategoriesArray.map((category) => {
+    //   unfilteredProductsArray.filter((product) => product.category == category);
+    // });
+    const lol = productsArray.filter((product) => product.category == category);
     setTimeout(() => {
       setUnfilteredProductsArray(lol);
       setFilterInProcess(false);
