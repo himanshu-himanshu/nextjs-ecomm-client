@@ -6,7 +6,6 @@ import { StarIcon } from "@heroicons/react/24/solid";
 
 const Filters = ({
   productsArray,
-  selectedCategoriesArray,
   setSelectedCategoriesArray,
   setSelectedBrandArray,
 }) => {
@@ -98,32 +97,22 @@ const Filters = ({
           Customer Rating
         </h1>
         <div className="w-full flex items-start flex-col space-y-3 py-2">
-          <div className="flex gap-1 hover:cursor-pointer">
-            <StarIcon className="h-5 w-5 text-yellow-500" />
-            <span className="text-gray-500 font-Gruppo font-bold">& Up</span>
-          </div>
-          <div className="flex gap-1 hover:cursor-pointer">
-            <StarIcon className="h-5 w-5 text-yellow-500" />
-            <StarIcon className="h-5 w-5 text-yellow-500" />
-            <span className="text-gray-500 font-Gruppo font-bold">& Up</span>
-          </div>
-          <div className="flex gap-1 hover:cursor-pointer">
-            <StarIcon className="h-5 w-5 text-yellow-500" />
-            <StarIcon className="h-5 w-5 text-yellow-500" />
-            <StarIcon className="h-5 w-5 text-yellow-500" />
-            <span className="text-gray-500 font-Gruppo font-bold">& Up</span>
-          </div>
-          <div className="flex gap-1 hover:cursor-pointer">
-            <StarIcon className="h-5 w-5 text-yellow-500" />
-            <StarIcon className="h-5 w-5 text-yellow-500" />
-            <StarIcon className="h-5 w-5 text-yellow-500" />
-            <StarIcon className="h-5 w-5 text-yellow-500" />
-            <span className="text-gray-500 font-Gruppo font-bold">& Up</span>
-          </div>
+          {[1, 2, 3, 4].map((value) => (
+            <div key={value} className="flex gap-1 hover:cursor-pointer">
+              <StarRating number={value} />
+              <span className="text-gray-500 font-Gruppo font-bold">& Up</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
+};
+
+const StarRating = ({ number }) => {
+  return Array.from({ length: number }, (_, index) => (
+    <StarIcon key={index} className="h-5 w-5 text-yellow-500" />
+  ));
 };
 
 export default Filters;

@@ -43,10 +43,10 @@ const Men = ({ productsArray }) => {
 
   return (
     <div className="h-full w-full py-12 px-6 border-t mt-4">
-      <div className="h-full w-full flex justify-start p-4 px-6">
+      <div className="flex justify-start p-4 px-6">
         <h1 className="text-5xl font-Gruppo uppercase">Men's</h1>
       </div>
-      <div className="h-full w-full flex flex-row">
+      <div className="flex flex-row">
         <Filters
           productsArray={productsArray}
           selectedCategoriesArray={selectedCategoriesArray}
@@ -62,7 +62,7 @@ const Men = ({ productsArray }) => {
             }`}
           >
             {filterInProcess && (
-              <div className="h-full w-full flex justify-center items-center py-24">
+              <div className="flex justify-center items-center py-24">
                 <ThreeDots
                   visible={true}
                   height="80"
@@ -70,8 +70,6 @@ const Men = ({ productsArray }) => {
                   color="#113034113034"
                   radius="9"
                   ariaLabel="three-dots-loading"
-                  wrapperStyle={{}}
-                  wrapperClass=""
                 />
               </div>
             )}
@@ -81,8 +79,8 @@ const Men = ({ productsArray }) => {
                 <Product item={item} key={item.id} />
               ))}
             {!filterInProcess && noProductsFound && (
-              <div className="h-full w-full flex justify-center items-center py-24 flex-col space-y-2 font-Gruppo text-gray-600">
-                <FaceFrownIcon class="h-12 w-12 text-pink-300 mb-6" />
+              <div className="flex justify-center items-center py-24 flex-col space-y-2 font-Gruppo text-gray-600">
+                <FaceFrownIcon className="h-12 w-12 text-pink-300 mb-6" />
                 <span>No Products found</span>
                 <span>
                   Your search did not match any products. Please try again.
