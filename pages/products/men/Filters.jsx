@@ -8,6 +8,7 @@ const Filters = ({
   productsArray,
   selectedCategoriesArray,
   setSelectedCategoriesArray,
+  setSelectedBrandArray,
 }) => {
   const handleCategorySelection = (category) => {
     setSelectedCategoriesArray((prevBrands) => {
@@ -15,6 +16,16 @@ const Filters = ({
         return prevBrands.filter((b) => b !== category);
       } else {
         return [...prevBrands, category];
+      }
+    });
+  };
+
+  const handleBrandSelection = (brand) => {
+    setSelectedBrandArray((prevBrands) => {
+      if (prevBrands.includes(brand)) {
+        return prevBrands.filter((b) => b !== brand);
+      } else {
+        return [...prevBrands, brand];
       }
     });
   };
@@ -59,7 +70,13 @@ const Filters = ({
               className="w-full flex items-center flex-row space-x-2 py-1"
               key={index}
             >
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                onChange={() => {
+                  handleBrandSelection(brand);
+                }}
+                className="hover:cursor-pointer"
+              />
               <span className="text-gray-800 font-Gruppo font-bold">
                 {brand}
               </span>
