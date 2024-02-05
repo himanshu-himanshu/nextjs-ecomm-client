@@ -5,6 +5,7 @@ import Filters from "./Filters";
 import React, { useState, useEffect } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { FaceFrownIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 const Men = ({ productsArray }) => {
   const [filterInProcess, setFilterInProcess] = useState(false);

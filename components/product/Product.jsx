@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../../redux/features/cart/cartSlice";
 import { toast, Toaster } from "react-hot-toast";
 import { Cog8ToothIcon } from "@heroicons/react/24/outline";
+
 import { StarIcon, HeartIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import CustomToast from "../../utils/CustomToast";
@@ -10,6 +12,7 @@ import CustomToast from "../../utils/CustomToast";
 const Product = ({ item }) => {
   const [addingToCart, setAddingToCart] = useState(false);
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const addToCart = () => {
     setAddingToCart(true);
@@ -18,6 +21,13 @@ const Product = ({ item }) => {
       setAddingToCart(false);
       toast.custom(<CustomToast />);
     }, 700);
+  };
+
+  const handleProductRedirect = () => {
+    if (!addingToCart) {
+      console.log("Redirect");
+      router.push(`/products/${item.id}`);
+    }
   };
 
   return (
@@ -32,17 +42,21 @@ const Product = ({ item }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7, ease: "anticipate" }}
+        onClick={(e) => handleProductRedirect(e)}
         className=" flex flex-col justify-center items-center hover:cursor-pointer duration-300 border border-gray-100/70 rounded-sm"
       >
         <div className="group relative duration-300 px-2 py-4">
           <img src={item.image} alt="" className="w-full h-80" />
-          <div className="hidden absolute h-full w-full top-0 left-0 group-hover:flex justify-center items-center duration-300 bg-gray-100/40">
+          <div className="hidden absolute h-full w-full top-0 left-0 group-hover:flex justify-center items-center duration-300 bg-gray-100/40 z-40">
             {!addingToCart ? (
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-[200px] py-6 px-2 bg-gray-100 uppercase tracking-wide duration-300 hover:bg-black/90 hover:text-gray-100"
-                onClick={addToCart}
+                onClick={(e) => {
+                  e.stopPropagation(); // Stop event propagation
+                  addToCart();
+                }}
               >
                 Add to Cart
               </motion.button>
