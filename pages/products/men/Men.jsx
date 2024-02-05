@@ -43,7 +43,7 @@ const Men = ({ productsArray }) => {
   }, [selectedCategoriesArray, productsArray, selectedBrandArray]);
 
   return (
-    <div className="h-full w-full py-12 px-6 border-t mt-4">
+    <div className="h-full w-full py-12 px-6 mt-4">
       <div className="flex justify-start p-4 px-6">
         <h1 className="text-5xl font-Gruppo uppercase">Men's</h1>
       </div>

@@ -3,7 +3,7 @@ import Filters from "../men/Filters";
 
 const Women = ({ productsArray }) => {
   return (
-    <div className="h-full w-full py-12 px-6 border-t mt-4">
+    <div className="h-full w-full py-12 px-6 mt-4">
       <div className="h-full w-full flex justify-start p-4 px-6">
         <h1 className="text-5xl font-Gruppo uppercase">Women's</h1>
       </div>
