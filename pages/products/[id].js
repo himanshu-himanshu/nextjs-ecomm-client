@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import { products } from "./../../utils/products";
 import Head from "next/head";
 import { Navbar } from "../../components";
-import { ColorRing, Blocks } from "react-loader-spinner";
 import { MinusIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
+import Spinner from "../../utils/Spinner";
 
 const ProductPage = () => {
   const router = useRouter();
@@ -14,12 +14,14 @@ const ProductPage = () => {
 
   useEffect(() => {
     const { id } = router.query;
+    console.log(id);
     setProductLoading(true);
 
     setTimeout(() => {
       // Use find to get the product with the matching 'id'
       const selectedProduct = products.find((p) => p.id === id);
       setProduct(selectedProduct);
+      console.log(selectedProduct);
       setProductLoading(false);
     }, 500);
   }, [router.query.id]);
@@ -35,7 +37,7 @@ const ProductPage = () => {
       {!productLoading && product && (
         <>
           <div className="h-full w-full py-12 px-6 mt-4">
-            <div className="max-w-5xl lg:max-w-6xl mx-auto h-full grid grid-col-1 md:grid-cols-2 gap-4">
+            <div className="max-w-5xl lg:max-w-6xl mx-auto h-full grid grid-col-1 md:grid-cols-2 md:gap-6 lg:gap-8">
               <div className="flex justify-center border">
                 <img
                   src={product.image}
@@ -51,7 +53,7 @@ const ProductPage = () => {
                   </h1>
                 </div>
                 <div>
-                  <p className="font-Gruppo text-lg md:text-xl text-primary mb-6">
+                  <p className="font-Gruppo text-lg md:text-xl text-primary mb-8">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
                     quasi optio labore qui. Architecto soluta dolores necessitas
                     esse rem nobis, alias officiis obcaecati, fuga numquam
@@ -76,7 +78,7 @@ const ProductPage = () => {
                     onClick={() => {}}
                   />
                 </div>
-                <button className="flex flex-row items-center justify-center py-4 sm:py-5 lg:py-6 w-full space-x-4 border my-6 border-primary uppercase text-primary hover:bg-primary hover:text-secondary duration-200">
+                <button className="flex flex-row items-center justify-center py-4 sm:py-5 lg:py-6 w-full space-x-4 border mt-8 border-primary uppercase text-primary hover:bg-primary hover:text-secondary duration-200 font-Gruppo font-extrabold text-lg md:text-xl">
                   Add to cart
                 </button>
               </div>
@@ -84,22 +86,7 @@ const ProductPage = () => {
           </div>
         </>
       )}
-      {productLoading && (
-        <div className="w-full min-h-[90vh] flex flex-col justify-center items-center">
-          <Blocks
-            height="80"
-            width="80"
-            color="#4fa94d"
-            ariaLabel="blocks-loading"
-            wrapperStyle={{}}
-            wrapperClass="blocks-wrapper"
-            visible={true}
-          />
-          <p className="font-Gruppo text-gray-700">
-            The joy of dressing is an art.
-          </p>
-        </div>
-      )}
+      {productLoading && <Spinner />}
     </>
   );
 };

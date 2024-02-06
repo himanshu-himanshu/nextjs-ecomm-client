@@ -34,7 +34,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full flex flex-row px-4 md:px-12 py-4 text-primary h-[10vh] z-40 border-b">
+    <div className="w-full flex flex-row px-4 md:px-12 py-4 lg:py-6 text-primary h-[10vh] z-40 border-b">
       <div className="hidden lg:flex items-center justify-start w-1/3">
         <div className="flex flex-row space-x-4 lg:space-x-8 uppercase tracking-wider text-sm font-light">
           {MENU_LIST.map((item, index) => (

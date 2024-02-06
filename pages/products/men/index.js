@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Quote, Navbar, Footer } from "../../../components";
 import Men from "./Men";
 import { products } from "../../../utils/products";
-import { ColorRing } from "react-loader-spinner";
+import Spinner from "../../../utils/Spinner";
 
 const index = () => {
   const [productsArray, setProductsArray] = useState([]);
@@ -25,22 +25,7 @@ const index = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      {productsLoading && (
-        <div className="w-full min-h-[90vh] flex flex-col justify-center items-center">
-          <ColorRing
-            visible={true}
-            height="80"
-            width="80"
-            ariaLabel="color-ring-loading"
-            wrapperStyle={{}}
-            wrapperClass="color-ring-wrapper"
-            colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
-          />
-          <p className="font-Gruppo text-gray-700">
-            The joy of dressing is an art.
-          </p>
-        </div>
-      )}
+      {productsLoading && <Spinner />}
       {!productsLoading && (
         <>
           <Men productsArray={productsArray} />
