@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Cart from "./Cart";
 import MobileMenu from "./MobileMenu";
 import OpenCart from "./OpenCart";
 import OpenMenu from "./OpenMenu";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [openCart, setOpenCart] = useState(false);

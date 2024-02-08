@@ -1,30 +1,32 @@
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import { products } from "./../../utils/products";
+import { useEffect, useState } from "react";
+import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
+import { StarIcon } from "@heroicons/react/24/solid";
 import Head from "next/head";
+
 import { Navbar } from "../../components";
-import { MinusIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { products } from "./../../utils/products";
 import Spinner from "../../utils/Spinner";
 
 const ProductPage = () => {
   const router = useRouter();
+  const { id } = router.query;
 
   const [product, setProduct] = useState(null);
-  const [productLoading, setProductLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const { id } = router.query;
-    console.log(id);
-    setProductLoading(true);
-
-    setTimeout(() => {
-      // Use find to get the product with the matching 'id'
-      const selectedProduct = products.find((p) => p.id === id);
-      setProduct(selectedProduct);
-      console.log(selectedProduct);
-      setProductLoading(false);
-    }, 500);
-  }, [router.query.id]);
+    setLoading(true);
+    if (id) {
+      setTimeout(() => {
+        // Use find to get the product with the matching 'id'
+        const selectedProduct = products.find((p) => p.id === id);
+      }, 500);
+    } else {
+      console.error("Error loading product");
+    }
+    setLoading(false);
+  }, [id]);
 
   return (
     <>
@@ -34,7 +36,7 @@ const ProductPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      {!productLoading && product && (
+      {!loading && product && (
         <>
           <div className="h-full w-full py-12 px-6 mt-4">
             <div className="max-w-5xl lg:max-w-6xl mx-auto h-full grid grid-col-1 md:grid-cols-2 md:gap-6 lg:gap-8">
@@ -46,12 +48,20 @@ const ProductPage = () => {
                 />
               </div>
               <div className="p-4">
-                <span className="font-Gruppo uppercase">{product.brand}</span>
+                <span className="font-Gruppo uppercase text-pink-600">
+                  {product.brand}
+                </span>
                 <div>
                   <h1 className="font-Borui text-2xl md:text-3xl lg:text-4xl text-primary mt-12 mb-4">
                     {product.title}
                   </h1>
                 </div>
+                <span className="flex flex-row items-center space-x-2 py-2">
+                  <span className="text-gray-600 font-Borui text-xl">
+                    {product.rating}
+                  </span>
+                  <StarIcon className="h-5 w-5 text-yellow-500" />
+                </span>
                 <div>
                   <p className="font-Gruppo text-lg md:text-xl text-primary mb-8">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
@@ -65,6 +75,7 @@ const ProductPage = () => {
                     ${product.price}
                   </h1>
                 </div>
+
                 <div className="flex flex-row items-center justify-center py-2 lg:py-4 space-x-4 border w-1/3">
                   <MinusIcon
                     className="h-4 w-4 text-gray-500 hover:cursor-pointer"
@@ -86,7 +97,7 @@ const ProductPage = () => {
           </div>
         </>
       )}
-      {productLoading && <Spinner />}
+      {loading && <Spinner />}
     </>
   );
 };

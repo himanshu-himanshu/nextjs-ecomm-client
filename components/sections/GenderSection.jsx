@@ -10,7 +10,7 @@ const GenderSection = () => {
           <h1 className="text-4xl">Men</h1>
           <Link
             className="mt-6 font-bold px-4 md:px-8 py-4 border border-secondary hover:bg-secondary text-primary duration-200 text-xl md:text-2xl font-Gruppo tracking-wider w-[150px] md:w-[200px] hover:-translate-y-1 hover:shadow-2xl bg-secondary/80"
-            href="/men-products"
+            href="/products/men"
           >
             Shop Now
           </Link>
@@ -19,7 +19,7 @@ const GenderSection = () => {
           <h1 className="text-4xl">Women</h1>
           <Link
             className="mt-6 font-bold px-4 md:px-8 py-4 border border-secondary hover:bg-secondary text-primary duration-200 text-xl md:text-2xl font-Gruppo tracking-wider w-[150px] md:w-[200px] hover:-translate-y-1 hover:shadow-2xl bg-secondary/80"
-            href="women-products"
+            href="/products/women"
           >
             Shop Now
           </Link>
