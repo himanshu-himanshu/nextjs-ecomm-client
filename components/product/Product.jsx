@@ -7,6 +7,7 @@ import { Cog8ToothIcon } from "@heroicons/react/24/outline";
 import { StarIcon, HeartIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import { ShoppingBagIcon } from "@heroicons/react/24/outline";
+import { showToast } from "../../utils/showToast";
 
 const Product = ({ item }) => {
   const [addingToCart, setAddingToCart] = useState(false);
@@ -18,17 +19,7 @@ const Product = ({ item }) => {
     setTimeout(() => {
       dispatch(addItemToCart(item));
       setAddingToCart(false);
-      toast.custom(
-        <motion.div
-          initial={{ y: -400 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.5, ease: "anticipate" }}
-          className="px-6 py-6 bg-primary text-secondary font-Borui rounded-sm flex flex-row space-x-4 duration-300 z-40"
-        >
-          <span className="tracking-wider"> Item added to cart</span>
-          <ShoppingBagIcon className="h-6 w-6 text-secondary" />
-        </motion.div>
-      );
+      showToast("Item added to cart");
     }, 700);
   };
 

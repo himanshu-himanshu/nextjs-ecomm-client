@@ -30,7 +30,7 @@ const Filters = ({
   };
 
   return (
-    <div className="hidden h-full flex-col lg:flex w-1/5 py-12 px-4">
+    <div className="sticky top-0 hidden h-full flex-col lg:flex w-1/5 py-12 px-4">
       <div className=" w-full p-2 mb-4">
         <h1 className="text-lg font-Borui font-light text-gray-700 mb-4">
           Category
