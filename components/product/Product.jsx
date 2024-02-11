@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../../redux/features/cart/cartSlice";
-import { toast, Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import { Cog8ToothIcon } from "@heroicons/react/24/outline";
 import { StarIcon, HeartIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
-import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 import { showToast } from "../../utils/showToast";
 
 const Product = ({ item }) => {

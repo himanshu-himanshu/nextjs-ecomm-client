@@ -4,6 +4,7 @@ import {
   Cog8ToothIcon,
   MinusIcon,
   PlusIcon,
+  ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 import { StarIcon } from "@heroicons/react/24/solid";
 import Head from "next/head";
@@ -23,6 +24,7 @@ const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [addingToCart, setAddingToCart] = useState(false);
+  const [productQuantity, setProductQuantity] = useState(1);
 
   useEffect(() => {
     setLoading(true);
@@ -46,10 +48,20 @@ const ProductPage = () => {
       setAddingToCart(false);
     }, 700);
   };
+
+  const handleProductQuantity = ({ operation }) => {
+    console.log(productQuantity);
+    if (operation === "INCREASE") {
+      setProductQuantity((prevQuantity) => prevQuantity + 1);
+    }
+    if (operation === "DECREASE" && productQuantity > 1) {
+      setProductQuantity((prevQuantity) => prevQuantity - 1);
+    }
+  };
   return (
     <>
       <Toaster
-        position="top-center"
+        position="top-right"
         toastOptions={{
           duration: 700,
         }}
@@ -76,7 +88,7 @@ const ProductPage = () => {
                   {product.brand}
                 </span>
                 <div>
-                  <h1 className="font-Borui text-2xl md:text-3xl lg:text-4xl text-primary mt-12 mb-4">
+                  <h1 className="font-Borui text-2xl md:text-3xl lg:text-4xl text-primary mt-6 mb-4">
                     {product.title}
                   </h1>
                 </div>
@@ -100,34 +112,40 @@ const ProductPage = () => {
                   </h1>
                 </div>
 
-                <div className="flex flex-row items-center justify-center py-2 lg:py-4 space-x-4 border w-1/3">
-                  <MinusIcon
-                    className="h-4 w-4 text-gray-500 hover:cursor-pointer"
-                    onClick={() => {}}
-                  />
-                  <span className="text-md font-Gruppo font-extrabold p-1 min-w-[30px] mx-auto text-center">
-                    {1}
-                  </span>
-                  <PlusIcon
-                    className="h-4 w-4 text-gray-500 hover:cursor-pointer"
-                    onClick={() => {}}
-                  />
+                <div className="grid grid-cols-2 gap-4 py-2">
+                  <div className="flex flex-row items-center justify-center p-4 border space-x-4">
+                    <MinusIcon
+                      className="h-4 w-4 text-gray-500 hover:cursor-pointer"
+                      onClick={() =>
+                        handleProductQuantity({ operation: "DECREASE" })
+                      }
+                    />
+                    <span className="text-md font-Gruppo font-extrabold p-1 min-w-[30px] mx-auto text-center">
+                      {productQuantity}
+                    </span>
+                    <PlusIcon
+                      className="h-4 w-4 text-gray-500 hover:cursor-pointer"
+                      onClick={() =>
+                        handleProductQuantity({ operation: "INCREASE" })
+                      }
+                    />
+                  </div>
+                  <div className="flex flex-row items-center justify-between">
+                    <button
+                      className="group flex justify-center items-center py-4 sm:py-5 w-full border border-primary bg-white hover:bg-primary duration-200 font-Gruppo font-extrabold text-lg md:text-xl shadow-sm hover:shadow-lg"
+                      onClick={(e) => {
+                        e.stopPropagation(); // Stop event propagation
+                        addToCart();
+                      }}
+                    >
+                      {!addingToCart ? (
+                        <ShoppingCartIcon className="h-8 w-8 text-primary group-hover:text-secondary" />
+                      ) : (
+                        <Cog8ToothIcon className="h-8 w-8 text-secondary animate-spin" />
+                      )}
+                    </button>
+                  </div>
                 </div>
-                {!addingToCart ? (
-                  <button
-                    className="flex flex-row items-center justify-center py-4 sm:py-5 lg:py-6 w-full space-x-4 border mt-8 border-primary uppercase text-primary hover:bg-primary hover:text-secondary duration-200 font-Gruppo font-extrabold text-lg md:text-xl"
-                    onClick={(e) => {
-                      e.stopPropagation(); // Stop event propagation
-                      addToCart();
-                    }}
-                  >
-                    Add to cart
-                  </button>
-                ) : (
-                  <button className="flex flex-row items-center justify-center py-4 sm:py-5 lg:py-6 w-full space-x-4 border mt-8 border-primary uppercase text-primary">
-                    <Cog8ToothIcon className="h-8 w-8 text-primary animate-spin" />
-                  </button>
-                )}
               </div>
             </div>
           </div>
