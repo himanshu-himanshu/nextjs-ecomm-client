@@ -16,9 +16,10 @@ const Product = ({ item }) => {
   const addToCart = () => {
     setAddingToCart(true);
     setTimeout(() => {
-      dispatch(addItemToCart(item));
+      const productWithQuantity = { ...item, quantity: 1 };
+      dispatch(addItemToCart(productWithQuantity));
       setAddingToCart(false);
-      showToast("Item added to cart");
+      showToast({ message: "Item added to cart", type: "Success" });
     }, 700);
   };
 
@@ -31,7 +32,7 @@ const Product = ({ item }) => {
   return (
     <>
       <Toaster
-        position="top-center"
+        position="top-right"
         toastOptions={{
           duration: 700,
         }}
