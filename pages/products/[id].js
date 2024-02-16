@@ -4,7 +4,7 @@ import {
   Cog8ToothIcon,
   MinusIcon,
   PlusIcon,
-  ShoppingCartIcon,
+  ShoppingBagIcon,
 } from "@heroicons/react/24/outline";
 import { StarIcon } from "@heroicons/react/24/solid";
 import Head from "next/head";
@@ -13,7 +13,7 @@ import { addItemToCart } from "../../redux/features/cart/cartSlice";
 import { Navbar } from "../../components";
 import { products } from "./../../utils/products";
 import Spinner from "../../utils/Spinner";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { showToast } from "../../utils/showToast";
 
 const ProductPage = () => {
@@ -33,11 +33,12 @@ const ProductPage = () => {
         // Use find to get the product with the matching 'id'
         const selectedProduct = products.find((p) => p.id === id);
         setProduct(selectedProduct);
+        setLoading(false);
       }, 500);
     } else {
       console.error("Error loading product");
+      setLoading(false);
     }
-    setLoading(false);
   }, [id]);
 
   const addToCart = () => {
@@ -63,6 +64,7 @@ const ProductPage = () => {
       setProductQuantity((prevQuantity) => prevQuantity - 1);
     }
   };
+
   return (
     <>
       <Toaster
@@ -149,16 +151,25 @@ const ProductPage = () => {
                     <button
                       className="group flex justify-center items-center py-4 sm:py-5 w-full border border-primary bg-white hover:bg-primary duration-200 font-Gruppo font-extrabold text-lg md:text-xl shadow-sm hover:shadow-lg"
                       onClick={(e) => {
-                        e.stopPropagation(); // Stop event propagation
                         addToCart();
                       }}
                     >
                       {!addingToCart ? (
-                        <ShoppingCartIcon className="h-8 w-8 text-primary group-hover:text-secondary" />
+                        <ShoppingBagIcon className="h-8 w-8 text-primary group-hover:text-secondary" />
                       ) : (
                         <Cog8ToothIcon className="h-8 w-8 text-secondary animate-spin" />
                       )}
                     </button>
+                  </div>
+                  <div
+                    className="py-2 font-Gruppo font-extrabold hover:cursor-pointer text-gray-700 hover:text-pink-500 duration-200"
+                    onClick={() => {
+                      product.gender === "men"
+                        ? router.push(`/products/men`)
+                        : router.push(`/products/women`);
+                    }}
+                  >
+                    <span>&larr; Back to shopping</span>
                   </div>
                 </div>
               </div>
