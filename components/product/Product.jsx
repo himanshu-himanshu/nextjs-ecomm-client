@@ -42,7 +42,7 @@ const Product = ({ item }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7, ease: "anticipate" }}
         onClick={(e) => handleProductRedirect(e)}
-        className=" flex flex-col justify-center items-center hover:cursor-pointer duration-300 border border-gray-100/70 rounded-sm"
+        className=" flex flex-col justify-center items-center hover:cursor-pointer duration-300 border border-gray-100"
       >
         <div className="group relative duration-300 px-2 py-4">
           <img src={item.image} alt="" className="w-full h-80" />
@@ -66,23 +66,17 @@ const Product = ({ item }) => {
             )}
           </div>
         </div>
-        <div className="w-full px-2 pb-1 flex flex-row justify-between items-center">
+        <div className="w-full px-2 pb-1 flex flex-row justify-between items-center font-Borui">
           <h1 className="font-semibold text-gray-700 text-sm">{item.brand}</h1>
           <span className="flex flex-row items-center space-x-2">
             <span className="text-gray-600">{item.rating}</span>
             <StarIcon className="h-5 w-5 text-yellow-500" />
           </span>
         </div>
-        <div className="flex flex-row justify-between w-full px-2 pb-2">
-          <h1 className="text-gray-700">{item.title}</h1>
+        <div className="flex flex-row justify-between items-center w-full px-2 pb-2 font-Gruppo font-semibold text-gray-700">
+          <h1>{item.title}</h1>
           <div className="flex flex-row space-x-2 items-center">
-            <h1 className="text-gray-700">${item.price}</h1>
-            <button
-              className="text-pink-700"
-              onClick={() => console.log(item.title)}
-            >
-              <HeartIcon className="h-5 w-5 text-red-400" />
-            </button>
+            <h1 className="text-lg">${item.price}</h1>
           </div>
         </div>
       </motion.div>

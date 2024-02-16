@@ -32,15 +32,23 @@ const Men = ({ productsArray }) => {
           setUnfilteredProductsArray(filteredProducts);
           setNoProductsFound(false);
         }
-
+        scrollToTop();
         setFilterInProcess(false);
       }, 500);
     } else {
       // Reset to all products if no categories are selected
       setUnfilteredProductsArray(productsArray);
       setNoProductsFound(false);
+      scrollToTop();
     }
   }, [selectedCategoriesArray, productsArray, selectedBrandArray]);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className="h-full w-full py-12 px-6 mt-4">
