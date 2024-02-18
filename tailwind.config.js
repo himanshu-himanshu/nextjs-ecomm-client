@@ -15,6 +15,11 @@ module.exports = {
         primary: "#113034",
         secondary: "#fffef9",
       },
+      backgroundImage: {
+        "men-section": "url('../public/assets/menProducts.jpg')",
+        "women-section": "url('../public/assets/womenProducts.jpg')",
+        banner: "url('../public/assets/banner.jpg')",
+      },
     },
   },
   plugins: [],
