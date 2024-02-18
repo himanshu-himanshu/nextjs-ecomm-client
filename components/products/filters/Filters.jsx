@@ -43,16 +43,18 @@ const Filters = ({
               className="w-full flex items-center flex-row space-x-2 py-1"
               key={index}
             >
-              <input
-                type="checkbox"
-                onChange={() => {
-                  handleCategorySelection(category);
-                }}
-                className="hover:cursor-pointer"
-              />
-              <span className="text-gray-800 font-Gruppo font-bold">
-                {category}
-              </span>
+              <label className="hover:cursor-pointer flex flex-row space-x-2">
+                <input
+                  type="checkbox"
+                  onChange={() => {
+                    handleCategorySelection(category);
+                  }}
+                  className="hover:cursor-pointer"
+                />
+                <span className="text-gray-800 font-Gruppo font-bold">
+                  {category}
+                </span>
+              </label>
             </div>
           ))}
       </div>
@@ -69,16 +71,18 @@ const Filters = ({
               className="w-full flex items-center flex-row space-x-2 py-1"
               key={index}
             >
-              <input
-                type="checkbox"
-                onChange={() => {
-                  handleBrandSelection(brand);
-                }}
-                className="hover:cursor-pointer"
-              />
-              <span className="text-gray-800 font-Gruppo font-bold">
-                {brand}
-              </span>
+              <label className="hover:cursor-pointer flex flex-row space-x-2">
+                <input
+                  type="checkbox"
+                  onChange={() => {
+                    handleBrandSelection(brand);
+                  }}
+                  className="hover:cursor-pointer"
+                />
+                <span className="text-gray-800 font-Gruppo font-bold">
+                  {brand}
+                </span>
+              </label>
             </div>
           ))}
       </div>

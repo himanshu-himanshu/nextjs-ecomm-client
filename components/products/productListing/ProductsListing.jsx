@@ -4,10 +4,10 @@ import React, { useState, useEffect } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { FaceFrownIcon } from "@heroicons/react/24/outline";
 
-import Product from "../../../components/product/Product";
-import Filters from "./Filters";
+import Product from "../../product/Product";
+import Filters from "../filters/Filters";
 
-const Men = ({ productsArray }) => {
+const ProductsListing = ({ productsArray, gender }) => {
   const [filterInProcess, setFilterInProcess] = useState(false);
   const [noProductsFound, setNoProductsFound] = useState(false);
   const [unfilteredProductsArray, setUnfilteredProductsArray] = useState([]);
@@ -53,7 +53,7 @@ const Men = ({ productsArray }) => {
   return (
     <div className="h-full w-full py-12 px-6 mt-4">
       <div className="flex justify-start p-4 px-6">
-        <h1 className="text-5xl font-Gruppo uppercase">Men's</h1>
+        <h1 className="text-5xl font-Gruppo uppercase">{gender}</h1>
       </div>
       <div className="flex flex-row">
         <Filters
@@ -103,4 +103,4 @@ const Men = ({ productsArray }) => {
   );
 };
 
-export default Men;
+export default ProductsListing;
