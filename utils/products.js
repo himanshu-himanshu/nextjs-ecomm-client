@@ -9,7 +9,7 @@ export const products = [
     price: 50,
     trending: true,
     image:
-      "https://ih1.redbubble.net/image.911954075.4332/ssrco,mhoodie,mens,101010:01c5ca27c6,front,square_product,x600-bg,f8f8f8.1.jpg",
+      "https://warsawsneakerstore.com/storage/media/f1000/2023/nike/218365/nike-solo-swoosh-fleece-hoodie-white-dx1355-051-64e4bc1badc40.jpg",
     type: "Clothing",
     gender: "men",
     rating: 4,
@@ -22,7 +22,7 @@ export const products = [
     price: 90,
     trending: true,
     image:
-      "https://i.pinimg.com/736x/66/1e/60/661e60737b8d03fd4a4731933da6ace9.jpg",
+      "https://brogiabbigliamento.it/178914-superlarge_default/guess-mens-cable-knith-sweater.jpg",
     type: "Clothing",
     gender: "men",
     rating: 4.5,
@@ -35,7 +35,7 @@ export const products = [
     price: 50,
     trending: true,
     image:
-      "https://ih1.redbubble.net/image.660508131.3741/ssrco,slim_fit_t_shirt,mens,101010:01c5ca27c6,front,square_product,600x600.u1.jpg",
+      "https://rustans.com/cdn/shop/products/2698404.jpg?v=1601344765&width=1400",
     type: "Clothing",
     gender: "men",
     rating: 3.2,
@@ -55,7 +55,7 @@ export const products = [
   {
     id: uuid(),
     category: "Sweater",
-    title: "Funcky Rainbow Sweater",
+    title: "Rainbow Sweater",
     brand: "Simons",
     price: 50,
     trending: true,
@@ -290,7 +290,7 @@ export const products = [
     price: 110,
     trending: false,
     image:
-      "https://cdn.shopify.com/s/files/1/0419/1525/products/1024x1024-Men-Sneakers-Premier-LowTop-Camel-063022-Flatlay.jpg?v=1657752200",
+      "https://www.brownsshoes.com/dw/image/v2/BFTX_PRD/on/demandware.static/-/Sites-brownsshoes-master-catalog/default/dw062ec5c2/266367_1.jpg?sw=500&sh=550",
     type: "Clothing",
     gender: "men",
     rating: 2,

@@ -45,7 +45,11 @@ const Product = ({ item }) => {
         className=" flex flex-col justify-center items-center hover:cursor-pointer duration-300 border border-gray-100"
       >
         <div className="group relative duration-300 px-2 py-4">
-          <img src={item.image} alt="" className="w-full h-80" />
+          <img
+            src={item.image}
+            alt=""
+            className="w-full h-40 md:h-50 lg:h-60 xl:h-80"
+          />
           <div className="hidden absolute h-full w-full top-0 left-0 group-hover:flex justify-center items-center duration-300 bg-gray-100/40 z-40">
             {!addingToCart ? (
               <motion.button
@@ -69,14 +73,16 @@ const Product = ({ item }) => {
         <div className="w-full px-2 pb-1 flex flex-row justify-between items-center font-Borui">
           <h1 className="font-semibold text-gray-700 text-sm">{item.brand}</h1>
           <span className="flex flex-row items-center space-x-2">
-            <span className="text-gray-600">{item.rating}</span>
-            <StarIcon className="h-5 w-5 text-yellow-500" />
+            <span className="text-sm md:text-md text-gray-600">
+              {item.rating}
+            </span>
+            <StarIcon className="h-4 w-4 md:h-5 md:w-5 text-yellow-500" />
           </span>
         </div>
         <div className="flex flex-row justify-between items-center w-full px-2 pb-2 font-Gruppo font-semibold text-gray-700">
-          <h1>{item.title}</h1>
+          <h1 className="text-sm md:text-lg">{item.title}</h1>
           <div className="flex flex-row space-x-2 items-center">
-            <h1 className="text-lg">${item.price}</h1>
+            <h1 className="text-sm md:text-lg">${item.price}</h1>
           </div>
         </div>
       </motion.div>

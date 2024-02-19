@@ -9,6 +9,7 @@ import GenderProducts from "./products/genderProducts/GenderProducts";
 import Filters from "./products/filters/Filters";
 import ProductsListing from "./products/productListing/ProductsListing";
 import PopularCategories from "./sections/PopularCategories";
+import Features from "./sections/Features";
 
 export {
   Navbar,
@@ -22,4 +23,5 @@ export {
   Filters,
   ProductsListing,
   PopularCategories,
+  Features,
 };

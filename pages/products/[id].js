@@ -161,16 +161,16 @@ const ProductPage = () => {
                       )}
                     </button>
                   </div>
-                  <div
-                    className="py-2 font-Gruppo font-extrabold hover:cursor-pointer text-gray-700 hover:text-pink-500 duration-200"
-                    onClick={() => {
-                      product.gender === "men"
-                        ? router.push(`/products/men`)
-                        : router.push(`/products/women`);
-                    }}
-                  >
-                    <span>&larr; Back to shopping</span>
-                  </div>
+                </div>
+                <div
+                  className="py-2 font-Gruppo font-extrabold hover:cursor-pointer text-gray-700 hover:text-pink-500 duration-200"
+                  onClick={() => {
+                    product.gender === "men"
+                      ? router.push(`/products/men`)
+                      : router.push(`/products/women`);
+                  }}
+                >
+                  <span>&larr; Back to shopping</span>
                 </div>
               </div>
             </div>

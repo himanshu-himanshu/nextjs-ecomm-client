@@ -3,12 +3,14 @@ import { motion } from "framer-motion";
 
 const GenderSection = () => {
   return (
-    <div className="h-full w-full p-6">
+    <div className="h-full w-full p-2 md:p-4 lg:p-6">
       <div className="h-full w-full flex justify-center py-6">
-        <h1 className="text-5xl font-Gruppo uppercase">Shop by Gender</h1>
+        <h1 className="text-3xl lg:text-4xl xl:text-5xl font-Gruppo uppercase">
+          Shop by Gender
+        </h1>
       </div>
       <div className="h-[60vh] w-full py-12 px-6">
-        <div className="h-full w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="h-full w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

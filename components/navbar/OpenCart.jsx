@@ -48,7 +48,7 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
         animate={{ x: 0, opacity: 100 }}
         transition={{ duration: 0.5 }}
         exit={{ x: 900, opacity: 0 }}
-        className="absolute h-full bg-white top-0 right-0 w-full sm:min-w-[500px] sm:w-1/3 overflow-hidden z-40"
+        className="absolute h-full bg-white top-0 right-0 w-[90%] sm:min-w-[500px] sm:w-1/3 overflow-hidden z-40"
       >
         {/**  Cart header */}
         <div className="flex flex-row justify-between items-center px-6 py-6 h-[10vh] border-b">
