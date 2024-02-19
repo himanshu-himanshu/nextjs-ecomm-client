@@ -36,7 +36,7 @@ const GenderProducts = ({ gender }) => {
             productsArray={productsArray}
             gender={gender === "men" ? "Men's" : "Women's"}
           />
-          <Quote />
+          <Quote quote={"Forget the rules, if you like it, wear it."} />
           <Footer />
         </>
       )}

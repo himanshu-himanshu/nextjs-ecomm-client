@@ -14,24 +14,24 @@ const Banner = () => {
         initial={{ x: 3000, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ type: "spring", damping: 10, delay: 0.8 }}
-        className="absolute w-full h-full top-0 left-0 -z-20 bg-gray-900/20"
+        className="absolute w-full h-full top-0 left-0 -z-20 bg-primary/60"
       ></motion.div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="container max-w-7xl mx-auto flex flex-col justify-center h-full px-4 md:px-8"
+        className="container max-w-7xl mx-auto flex flex-col justify-center items-center sm:items-start h-full px-4 md:px-8 z-40"
       >
-        <p className="text-gray-100 text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold">
+        <p className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold">
           <span className="font-Borui"> 30 % off</span>
         </p>
-        <p className="text-gray-100 text-2xl font-Gruppo my-2">
+        <p className="text-white text-2xl font-Gruppo my-2 text-center sm:text-left">
           Grab the style that makes you confident with new winter sale!
         </p>
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="mt-6 font-bold px-4 md:px-8 py-4 border border-secondary hover:bg-secondary text-primary text-xl md:text-2xl font-Gruppo tracking-wider w-[150px] md:w-[200px] hover:shadow-2xl bg-secondary/80"
+          className="mt-6 font-bold px-4 md:px-8 py-4 border border-secondary hover:bg-secondary text-primary text-xl md:text-2xl font-Gruppo tracking-wider w-[150px] md:w-[200px] hover:shadow-2xl bg-secondary/90"
         >
           Shop Now
         </motion.button>

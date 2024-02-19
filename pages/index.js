@@ -7,6 +7,7 @@ import {
   Trending,
   GenderSection,
   Footer,
+  PopularBrands,
 } from "../components";
 
 export default function Home() {
@@ -20,9 +21,12 @@ export default function Home() {
       {/** Components */}
       <Navbar />
       <Banner />
+      {/* <Quote quote="Forget the rules, if you like it, wear it." /> */}
       <Trending />
       <GenderSection />
-      <Quote />
+      <Quote quote="Fashions fade. Style is eternal." />
+      <PopularBrands />
+
       <Footer />
     </>
   );

@@ -8,6 +8,7 @@ import Trending from "./trending/Trending";
 import GenderProducts from "./products/genderProducts/GenderProducts";
 import Filters from "./products/filters/Filters";
 import ProductsListing from "./products/productListing/ProductsListing";
+import PopularBrands from "./sections/PopularBrands";
 
 export {
   Navbar,
@@ -20,4 +21,5 @@ export {
   GenderProducts,
   Filters,
   ProductsListing,
+  PopularBrands,
 };

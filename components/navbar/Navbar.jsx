@@ -34,42 +34,47 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full flex flex-row px-4 md:px-12 py-4 lg:py-6 text-primary h-[10vh] z-40 border-b">
-      <div className="hidden lg:flex items-center justify-start w-1/3">
-        <div className="flex flex-row space-x-4 lg:space-x-8 uppercase tracking-wider text-sm font-light">
-          {MENU_LIST.map((item, index) => (
-            <Link
-              className="hover:cursor-pointer hover:text-gray-500"
-              href={item.href}
-              passHref
-              key={index}
-            >
-              {item.text}
-            </Link>
-          ))}
+    <>
+      <div className="hidden md:block bg-primary font-Gruppo w-full text-center uppercase text-secondary tracking-widest z-40">
+        Free shipping over <b>$100</b> and free returns
+      </div>
+      <div className="w-full flex flex-row px-4 md:px-12 py-4 lg:py-6 text-primary h-[10vh] z-40 border-b">
+        <div className="hidden lg:flex items-center justify-start w-1/3">
+          <div className="flex flex-row space-x-4 lg:space-x-8 uppercase tracking-wider text-sm font-light">
+            {MENU_LIST.map((item, index) => (
+              <Link
+                className="hover:cursor-pointer hover:text-gray-500"
+                href={item.href}
+                passHref
+                key={index}
+              >
+                {item.text}
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
-      <MobileMenu handleOpenMenu={handleOpenMenu} />
-      {openMenu && <OpenMenu handleCloseMenu={handleCloseMenu} />}
-      <div className="flex items-center justify-center w-1/3">
-        <div className="text-2xl md:text-4xl uppercase font-extrabold tracking-wider hover:cursor-pointer font-Borui p-2">
-          <a href="/"> Grab.it</a>
+        <MobileMenu handleOpenMenu={handleOpenMenu} />
+        {openMenu && <OpenMenu handleCloseMenu={handleCloseMenu} />}
+        <div className="flex items-center justify-center w-1/3">
+          <div className="text-2xl md:text-4xl uppercase font-extrabold tracking-wider hover:cursor-pointer font-Borui p-2">
+            <a href="/"> Grab.it</a>
+          </div>
         </div>
-      </div>
-      <div className="flex flex-row justify-end items-center space-x-2 md:space-x-4 w-1/3">
-        <Cart handleOpenCart={handleOpenCart} />
-      </div>
+        <div className="flex flex-row justify-end items-center space-x-2 md:space-x-4 w-1/3">
+          <Cart handleOpenCart={handleOpenCart} />
+        </div>
 
-      <AnimatePresence initial={false}>
-        {openCart && (
-          <OpenCart
-            handleOpenCart={handleOpenCart}
-            handleCloseCart={handleCloseCart}
-            openCart={openCart}
-          />
-        )}
-      </AnimatePresence>
-    </div>
+        <AnimatePresence initial={false}>
+          {openCart && (
+            <OpenCart
+              handleOpenCart={handleOpenCart}
+              handleCloseCart={handleCloseCart}
+              openCart={openCart}
+            />
+          )}
+        </AnimatePresence>
+      </div>
+    </>
   );
 };
 
