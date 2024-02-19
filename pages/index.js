@@ -7,7 +7,7 @@ import {
   Trending,
   GenderSection,
   Footer,
-  PopularBrands,
+  PopularCategories,
 } from "../components";
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
       <Trending />
       <GenderSection />
       <Quote quote="Fashions fade. Style is eternal." />
-      <PopularBrands />
+      <PopularCategories />
 
       <Footer />
     </>
