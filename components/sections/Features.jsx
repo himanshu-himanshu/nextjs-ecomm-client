@@ -1,5 +1,3 @@
-import React from "react";
-import Link from "next/link";
 import { FaShippingFast } from "react-icons/fa";
 import { TbTruckReturn } from "react-icons/tb";
 import { MdOutlineSupportAgent } from "react-icons/md";

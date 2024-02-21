@@ -3,11 +3,15 @@
 import Slider, { Range } from "rc-slider";
 import "rc-slider/assets/index.css";
 import { StarIcon } from "@heroicons/react/24/solid";
+import { motion } from "framer-motion";
+import CloseButton from "../../../utils/CloseButton";
 
 const Filters = ({
   productsArray,
   setSelectedCategoriesArray,
   setSelectedBrandArray,
+  isFiltersOpen,
+  handleFiltersClose,
 }) => {
   const handleCategorySelection = (category) => {
     setSelectedCategoriesArray((prevBrands) => {
@@ -30,8 +34,67 @@ const Filters = ({
   };
 
   return (
-    <div className="sticky top-0 hidden h-full flex-col lg:flex w-1/5 py-12 px-4">
-      <div className=" w-full p-2 mb-4">
+    <>
+      {isFiltersOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.5 }}
+          transition={{ duration: 0.2 }}
+          className="bg-gray-800/70 absolute lg:hidden w-full h-full top-0 left-0 overflow-y-hidden cursor-crosshair z-40"
+          onClick={() => handleFiltersClose()}
+        />
+      )}
+      {isFiltersOpen && (
+        <motion.div
+          initial={{ x: 400, opacity: 0 }}
+          animate={{ x: 0, opacity: 100 }}
+          transition={{ duration: 0.4 }}
+          whileInView={true}
+          className={`filters_mobile`}
+        >
+          <div className="flex flex-row justify-between items-center pb-6 font-extralight">
+            <h1 className="text-2xl uppercase font-Borui font-light text-gray-700">
+              Filters
+            </h1>
+            <div onClick={() => handleFiltersClose()}>
+              <CloseButton />
+            </div>
+          </div>
+          <hr />
+          <Body
+            productsArray={productsArray}
+            handleCategorySelection={handleCategorySelection}
+            handleBrandSelection={handleBrandSelection}
+          />
+        </motion.div>
+      )}
+      {!isFiltersOpen && (
+        <div className={`filters`}>
+          <Body
+            productsArray={productsArray}
+            handleCategorySelection={handleCategorySelection}
+            handleBrandSelection={handleBrandSelection}
+          />
+        </div>
+      )}
+    </>
+  );
+};
+
+const StarRating = ({ number }) => {
+  return Array.from({ length: number }, (_, index) => (
+    <StarIcon key={index} className="h-5 w-5 text-yellow-500" />
+  ));
+};
+
+const Body = ({
+  productsArray,
+  handleBrandSelection,
+  handleCategorySelection,
+}) => {
+  return (
+    <>
+      <div className="w-full p-2 mb-4">
         <h1 className="text-lg font-Borui font-light text-gray-700 mb-4">
           Category
         </h1>
@@ -109,14 +172,8 @@ const Filters = ({
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
-};
-
-const StarRating = ({ number }) => {
-  return Array.from({ length: number }, (_, index) => (
-    <StarIcon key={index} className="h-5 w-5 text-yellow-500" />
-  ));
 };
 
 export default Filters;

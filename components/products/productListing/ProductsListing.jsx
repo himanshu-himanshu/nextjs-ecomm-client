@@ -6,6 +6,7 @@ import { FaceFrownIcon } from "@heroicons/react/24/outline";
 
 import Product from "../../product/Product";
 import Filters from "../filters/Filters";
+import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
 
 const ProductsListing = ({ productsArray, gender }) => {
   const [filterInProcess, setFilterInProcess] = useState(false);
@@ -13,6 +14,7 @@ const ProductsListing = ({ productsArray, gender }) => {
   const [unfilteredProductsArray, setUnfilteredProductsArray] = useState([]);
   const [selectedCategoriesArray, setSelectedCategoriesArray] = useState([]);
   const [selectedBrandArray, setSelectedBrandArray] = useState([]);
+  const [isFiltersOpen, setIsFiltersOpen] = useState(false);
 
   useEffect(() => {
     if (selectedCategoriesArray.length > 0 || selectedBrandArray.length > 0) {
@@ -50,10 +52,25 @@ const ProductsListing = ({ productsArray, gender }) => {
     });
   };
 
+  const handleFiltersOpen = () => {
+    document.body.style.overflow = "hidden";
+    setIsFiltersOpen(true);
+  };
+
+  const handleFiltersClose = () => {
+    document.body.style.overflow = "unset";
+    setIsFiltersOpen(false);
+  };
+
   return (
     <div className="h-full w-full py-6 lg:py-12 px-2 lg:px-6 mt-4">
-      <div className="flex justify-center lg:justify-start p-4 px-6">
+      <div className="flex justify-between lg:justify-start p-4 px-6">
         <h1 className="text-5xl font-Gruppo uppercase">{gender}</h1>
+        <div className="flex lg:hidden">
+          <button onClick={() => handleFiltersOpen()}>
+            <AdjustmentsHorizontalIcon class="h-7 w-7 text-gray-800" />
+          </button>
+        </div>
       </div>
       <div className="flex flex-row">
         <Filters
@@ -61,6 +78,8 @@ const ProductsListing = ({ productsArray, gender }) => {
           selectedCategoriesArray={selectedCategoriesArray}
           setSelectedCategoriesArray={setSelectedCategoriesArray}
           setSelectedBrandArray={setSelectedBrandArray}
+          isFiltersOpen={isFiltersOpen}
+          handleFiltersClose={handleFiltersClose}
         />
         <div className="w-full lg:w-4/5 py-12 px-6">
           <div

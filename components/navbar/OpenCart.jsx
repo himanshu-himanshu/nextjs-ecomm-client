@@ -42,7 +42,7 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
         exit={{ opacity: 0 }}
         className="bg-gray-800 absolute w-full h-full top-0 left-0 overflow-hidden cursor-crosshair z-40"
         onClick={() => handleCloseCart()}
-      ></motion.div>
+      />
       <motion.div
         initial={{ x: 400, opacity: 0 }}
         animate={{ x: 0, opacity: 100 }}

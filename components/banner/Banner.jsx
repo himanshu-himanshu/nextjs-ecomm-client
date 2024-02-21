@@ -14,7 +14,7 @@ const Banner = () => {
         initial={{ x: 3000, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ type: "spring", damping: 10, delay: 0.8 }}
-        className="absolute w-full h-full top-0 left-0 -z-20 bg-primary/60"
+        className="absolute w-full h-full top-0 left-0 -z-20 bg-primary/30"
       ></motion.div>
       <motion.div
         initial={{ opacity: 0 }}
