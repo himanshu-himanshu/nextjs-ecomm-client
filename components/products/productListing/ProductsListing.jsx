@@ -17,32 +17,52 @@ const ProductsListing = ({ productsArray, gender }) => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
 
   useEffect(() => {
-    if (selectedCategoriesArray.length > 0 || selectedBrandArray.length > 0) {
-      setFilterInProcess(true);
-      const filteredProducts = productsArray.filter(
-        (product) =>
-          (selectedCategoriesArray.length === 0 ||
-            selectedCategoriesArray.includes(product.category)) &&
-          (selectedBrandArray.length === 0 ||
-            selectedBrandArray.includes(product.brand))
-      );
+    const mediaQuery = window.matchMedia("(min-width: 1024px)"); // Change the width as per your 'lg' breakpoint
+    const handleScreenChange = () => {
+      setIsFiltersOpen(!mediaQuery.matches ? false : ""); // Set isFiltersOpen to false when screen size is large
+    };
 
-      setTimeout(() => {
-        if (filteredProducts.length === 0) {
-          setNoProductsFound(true);
-        } else {
-          setUnfilteredProductsArray(filteredProducts);
-          setNoProductsFound(false);
-        }
+    // Check initial screen size
+    handleScreenChange();
+
+    // Add event listener for screen size changes
+    mediaQuery.addEventListener("change", handleScreenChange);
+
+    // Clean up the event listener
+    return () => mediaQuery.removeEventListener("change", handleScreenChange);
+  }, []);
+
+  useEffect(() => {
+    const filterProducts = () => {
+      if (selectedCategoriesArray.length > 0 || selectedBrandArray.length > 0) {
+        setFilterInProcess(true);
+        const filteredProducts = productsArray.filter(
+          (product) =>
+            (selectedCategoriesArray.length === 0 ||
+              selectedCategoriesArray.includes(product.category)) &&
+            (selectedBrandArray.length === 0 ||
+              selectedBrandArray.includes(product.brand))
+        );
+
+        setTimeout(() => {
+          if (filteredProducts.length === 0) {
+            setNoProductsFound(true);
+          } else {
+            setUnfilteredProductsArray(filteredProducts);
+            setNoProductsFound(false);
+          }
+          scrollToTop();
+          setFilterInProcess(false);
+        }, 500);
+      } else {
+        // Reset to all products if no categories are selected
+        setUnfilteredProductsArray(productsArray);
+        setNoProductsFound(false);
         scrollToTop();
-        setFilterInProcess(false);
-      }, 500);
-    } else {
-      // Reset to all products if no categories are selected
-      setUnfilteredProductsArray(productsArray);
-      setNoProductsFound(false);
-      scrollToTop();
-    }
+      }
+    };
+
+    filterProducts();
   }, [selectedCategoriesArray, productsArray, selectedBrandArray]);
 
   const scrollToTop = () => {

@@ -12,6 +12,8 @@ const Filters = ({
   setSelectedBrandArray,
   isFiltersOpen,
   handleFiltersClose,
+  selectedCategoriesArray,
+  selectedBrandsArray,
 }) => {
   const handleCategorySelection = (category) => {
     setSelectedCategoriesArray((prevBrands) => {
@@ -65,6 +67,10 @@ const Filters = ({
             productsArray={productsArray}
             handleCategorySelection={handleCategorySelection}
             handleBrandSelection={handleBrandSelection}
+            selectedCategoriesArray={selectedCategoriesArray}
+            selectedBrandsArray={selectedBrandsArray}
+            setSelectedBrandArray={selectedBrandsArray}
+            setSelectedCategoriesArray={setSelectedCategoriesArray}
           />
         </motion.div>
       )}
@@ -74,6 +80,10 @@ const Filters = ({
             productsArray={productsArray}
             handleCategorySelection={handleCategorySelection}
             handleBrandSelection={handleBrandSelection}
+            selectedCategoriesArray={selectedCategoriesArray}
+            selectedBrandsArray={selectedBrandsArray}
+            setSelectedBrandArray={selectedBrandsArray}
+            setSelectedCategoriesArray={setSelectedCategoriesArray}
           />
         </div>
       )}
@@ -91,6 +101,8 @@ const Body = ({
   productsArray,
   handleBrandSelection,
   handleCategorySelection,
+  selectedBrandsArray,
+  selectedCategoriesArray,
 }) => {
   return (
     <>
@@ -113,6 +125,7 @@ const Body = ({
                     handleCategorySelection(category);
                   }}
                   className="hover:cursor-pointer"
+                  checked={selectedCategoriesArray?.includes(category)}
                 />
                 <span className="text-gray-800 font-Gruppo font-bold">
                   {category}
@@ -141,6 +154,7 @@ const Body = ({
                     handleBrandSelection(brand);
                   }}
                   className="hover:cursor-pointer"
+                  checked={selectedBrandsArray?.includes(brand)}
                 />
                 <span className="text-gray-800 font-Gruppo font-bold">
                   {brand}
