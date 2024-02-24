@@ -14,36 +14,48 @@ const ProductsListing = ({ productsArray, gender }) => {
   const [unfilteredProductsArray, setUnfilteredProductsArray] = useState([]);
   const [selectedCategoriesArray, setSelectedCategoriesArray] = useState([]);
   const [selectedBrandArray, setSelectedBrandArray] = useState([]);
+  const [ratings, setRatings] = useState();
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
 
+  /**
+   * USE EFFECT for checking if the window width is greater than large or not
+   * IF YES -> then set the isFiltersOpen to false as it should not show mobile filters
+   * IF NO -> then user can toggle between opening filters or not
+   */
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 1024px)"); // Change the width as per your 'lg' breakpoint
     const handleScreenChange = () => {
       setIsFiltersOpen(!mediaQuery.matches ? false : ""); // Set isFiltersOpen to false when screen size is large
     };
-
     // Check initial screen size
     handleScreenChange();
-
     // Add event listener for screen size changes
     mediaQuery.addEventListener("change", handleScreenChange);
-
     // Clean up the event listener
     return () => mediaQuery.removeEventListener("change", handleScreenChange);
   }, []);
 
+  /**
+   * USE EFFECT for handling the filtering logic
+   */
   useEffect(() => {
+    console.log(ratings);
     const filterProducts = () => {
-      if (selectedCategoriesArray.length > 0 || selectedBrandArray.length > 0) {
+      if (
+        selectedCategoriesArray.length > 0 ||
+        selectedBrandArray.length > 0 ||
+        ratings
+      ) {
         setFilterInProcess(true);
         const filteredProducts = productsArray.filter(
           (product) =>
             (selectedCategoriesArray.length === 0 ||
               selectedCategoriesArray.includes(product.category)) &&
             (selectedBrandArray.length === 0 ||
-              selectedBrandArray.includes(product.brand))
+              selectedBrandArray.includes(product.brand)) &&
+            (!ratings || product.rating >= ratings)
         );
-
+        scrollToTop();
         setTimeout(() => {
           if (filteredProducts.length === 0) {
             setNoProductsFound(true);
@@ -51,19 +63,19 @@ const ProductsListing = ({ productsArray, gender }) => {
             setUnfilteredProductsArray(filteredProducts);
             setNoProductsFound(false);
           }
-          scrollToTop();
           setFilterInProcess(false);
         }, 500);
       } else {
         // Reset to all products if no categories are selected
+        scrollToTop();
         setUnfilteredProductsArray(productsArray);
         setNoProductsFound(false);
-        scrollToTop();
       }
+      scrollToTop();
     };
 
     filterProducts();
-  }, [selectedCategoriesArray, productsArray, selectedBrandArray]);
+  }, [selectedCategoriesArray, productsArray, selectedBrandArray, ratings]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -100,6 +112,8 @@ const ProductsListing = ({ productsArray, gender }) => {
           setSelectedBrandArray={setSelectedBrandArray}
           isFiltersOpen={isFiltersOpen}
           handleFiltersClose={handleFiltersClose}
+          setRatings={setRatings}
+          ratings={ratings}
         />
         <div className="w-full lg:w-4/5 py-12 px-6">
           <div

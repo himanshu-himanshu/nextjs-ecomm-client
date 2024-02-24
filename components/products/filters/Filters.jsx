@@ -14,6 +14,8 @@ const Filters = ({
   handleFiltersClose,
   selectedCategoriesArray,
   selectedBrandsArray,
+  setRatings,
+  ratings,
 }) => {
   const handleCategorySelection = (category) => {
     setSelectedCategoriesArray((prevBrands) => {
@@ -33,6 +35,10 @@ const Filters = ({
         return [...prevBrands, brand];
       }
     });
+  };
+
+  const handleRatingsSelection = (rating) => {
+    setRatings((prevRating) => (prevRating === rating ? null : rating));
   };
 
   return (
@@ -71,6 +77,9 @@ const Filters = ({
             selectedBrandsArray={selectedBrandsArray}
             setSelectedBrandArray={selectedBrandsArray}
             setSelectedCategoriesArray={setSelectedCategoriesArray}
+            setRatings={setRatings}
+            handleRatingsSelection={handleRatingsSelection}
+            ratings={ratings}
           />
         </motion.div>
       )}
@@ -84,6 +93,9 @@ const Filters = ({
             selectedBrandsArray={selectedBrandsArray}
             setSelectedBrandArray={selectedBrandsArray}
             setSelectedCategoriesArray={setSelectedCategoriesArray}
+            setRatings={setRatings}
+            handleRatingsSelection={handleRatingsSelection}
+            ratings={ratings}
           />
         </div>
       )}
@@ -103,6 +115,8 @@ const Body = ({
   handleCategorySelection,
   selectedBrandsArray,
   selectedCategoriesArray,
+  handleRatingsSelection,
+  ratings,
 }) => {
   return (
     <>
@@ -164,25 +178,28 @@ const Body = ({
           ))}
       </div>
 
-      <div className="w-full p-2 mb-12">
-        <h1 className="text-lg font-Borui font-light text-gray-700 mb-4">
-          Price
-        </h1>
-        <div className="w-full flex items-center flex-row space-x-2 py-1">
-          <Slider min={0} max={1000} className="" />
-        </div>
-      </div>
-
       <div className="w-full p-2">
         <h1 className="text-lg font-Borui font-light text-gray-700 mb-4">
           Customer Rating
         </h1>
         <div className="w-full flex items-start flex-col space-y-3 py-2">
           {[1, 2, 3, 4].map((value) => (
-            <div key={value} className="flex gap-1 hover:cursor-pointer">
-              <StarRating number={value} />
-              <span className="text-gray-500 font-Gruppo font-bold">& Up</span>
-            </div>
+            <label className="hover:cursor-pointer flex flex-row space-x-2">
+              <input
+                type="checkbox"
+                onChange={() => {
+                  handleRatingsSelection(value);
+                }}
+                checked={ratings == value}
+                className="hover:cursor-pointer"
+              />
+              <div key={value} className="flex gap-1 hover:cursor-pointer">
+                <StarRating number={value} />
+                <span className="text-gray-500 font-Gruppo font-bold">
+                  & Up
+                </span>
+              </div>
+            </label>
           ))}
         </div>
       </div>
