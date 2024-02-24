@@ -48,7 +48,7 @@ const Product = ({ item }) => {
           <img
             src={item.image}
             alt=""
-            className="w-full h-40 md:h-50 lg:h-60 xl:h-80"
+            className="w-full h-[180px] sm:h-[220px] md:h-60 lg:h-60 xl:h-80"
           />
           <div className="hidden absolute h-full w-full top-0 left-0 group-hover:flex justify-center items-center duration-300 bg-gray-100/40 z-40">
             {!addingToCart ? (

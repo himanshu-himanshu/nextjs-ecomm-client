@@ -64,13 +64,13 @@ const ProductsListing = ({ productsArray, gender }) => {
 
   return (
     <div className="h-full w-full py-6 lg:py-12 px-2 lg:px-6 mt-4">
-      <div className="flex justify-between lg:justify-start p-4 px-6">
-        <h1 className="text-5xl font-Gruppo uppercase">{gender}</h1>
-        <div className="flex lg:hidden">
+      <div className="flex justify-start p-4 px-6">
+        <div className="flex lg:hidden mr-8">
           <button onClick={() => handleFiltersOpen()}>
-            <AdjustmentsHorizontalIcon class="h-7 w-7 text-gray-800" />
+            <AdjustmentsHorizontalIcon class="h-7 w-7 text-primary" />
           </button>
         </div>
+        <h1 className="text-4xl lg:text-5xl font-Gruppo uppercase">{gender}</h1>
       </div>
       <div className="flex flex-row">
         <Filters

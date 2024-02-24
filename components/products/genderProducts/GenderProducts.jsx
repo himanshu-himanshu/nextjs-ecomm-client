@@ -18,7 +18,7 @@ const GenderProducts = ({ gender }) => {
     setTimeout(() => {
       setProductsLoading(false);
       setProductsArray(products.filter((product) => product.gender === gender));
-    }, 1000);
+    }, 500);
   }, [gender]);
 
   return (

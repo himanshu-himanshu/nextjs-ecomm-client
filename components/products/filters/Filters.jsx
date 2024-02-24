@@ -46,7 +46,7 @@ const Filters = ({
       )}
       {isFiltersOpen && (
         <motion.div
-          initial={{ x: 400, opacity: 0 }}
+          initial={{ x: -400, opacity: 0 }}
           animate={{ x: 0, opacity: 100 }}
           transition={{ duration: 0.4 }}
           whileInView={true}

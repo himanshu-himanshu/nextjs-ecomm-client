@@ -21,5 +21,5 @@ body {
   }
 
   .filters_mobile {
-    @apply absolute lg:hidden bg-secondary h-full  overflow-y-scroll top-0 right-0 w-[70%] sm:min-w-[350px] sm:w-[30%] overflow-hidden z-40 px-8 py-12
+    @apply absolute lg:hidden bg-secondary h-full  overflow-y-scroll top-0 left-0 w-[70%] sm:min-w-[350px] sm:w-[30%] overflow-hidden z-40 px-8 py-12
   }
