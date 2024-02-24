@@ -113,6 +113,9 @@ const ProductPage = () => {
                     aliquid ducimus sint minima aperiam.
                   </p>
                 </div>
+                <p className="font-Gruppo text-green-500 uppercase text-[12px]">
+                  ⦿ In Stock
+                </p>
                 <div>
                   <h1 className="font-Gruppo text-2xl md:text-3xl lg:text-4xl text-primary my-6">
                     ${product.price}

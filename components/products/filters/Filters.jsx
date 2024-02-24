@@ -1,6 +1,5 @@
 "use client";
 
-import Slider, { Range } from "rc-slider";
 import "rc-slider/assets/index.css";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
@@ -121,18 +120,13 @@ const Body = ({
   return (
     <>
       <div className="w-full p-2 mb-4">
-        <h1 className="text-lg font-Borui font-light text-gray-700 mb-4">
-          Category
-        </h1>
+        <h1 className="filterHeading">Category</h1>
         {productsArray
           .map((product) => product.category)
           .filter((category, index, self) => self.indexOf(category) === index)
           .map((category, index) => (
-            <div
-              className="w-full flex items-center flex-row space-x-2 py-1"
-              key={index}
-            >
-              <label className="hover:cursor-pointer flex flex-row space-x-2">
+            <div className="checkboxDiv" key={index}>
+              <label className="checkboxLabel">
                 <input
                   type="checkbox"
                   onChange={() => {
@@ -141,27 +135,20 @@ const Body = ({
                   className="hover:cursor-pointer"
                   checked={selectedCategoriesArray?.includes(category)}
                 />
-                <span className="text-gray-800 font-Gruppo font-bold">
-                  {category}
-                </span>
+                <span className="checkbox">{category}</span>
               </label>
             </div>
           ))}
       </div>
 
       <div className="w-full p-2 mb-4 border-t">
-        <h1 className="text-lg font-Borui font-light text-gray-700 mb-4">
-          Brand
-        </h1>
+        <h1 className="filterHeading">Brand</h1>
         {productsArray
           .map((product) => product.brand)
           .filter((brand, index, self) => self.indexOf(brand) === index)
           .map((brand, index) => (
-            <div
-              className="w-full flex items-center flex-row space-x-2 py-1"
-              key={index}
-            >
-              <label className="hover:cursor-pointer flex flex-row space-x-2">
+            <div className="checkboxDiv" key={index}>
+              <label className="checkboxLabel">
                 <input
                   type="checkbox"
                   onChange={() => {
@@ -170,21 +157,17 @@ const Body = ({
                   className="hover:cursor-pointer"
                   checked={selectedBrandsArray?.includes(brand)}
                 />
-                <span className="text-gray-800 font-Gruppo font-bold">
-                  {brand}
-                </span>
+                <span className="checkbox">{brand}</span>
               </label>
             </div>
           ))}
       </div>
 
       <div className="w-full p-2">
-        <h1 className="text-lg font-Borui font-light text-gray-700 mb-4">
-          Customer Rating
-        </h1>
+        <h1 className="filterHeading">Customer Rating</h1>
         <div className="w-full flex items-start flex-col space-y-3 py-2">
           {[1, 2, 3, 4].map((value) => (
-            <label className="hover:cursor-pointer flex flex-row space-x-2">
+            <label className="checkboxLabel">
               <input
                 type="checkbox"
                 onChange={() => {
@@ -195,9 +178,7 @@ const Body = ({
               />
               <div key={value} className="flex gap-1 hover:cursor-pointer">
                 <StarRating number={value} />
-                <span className="text-gray-500 font-Gruppo font-bold">
-                  & Up
-                </span>
+                <span className="checkbox">& Up</span>
               </div>
             </label>
           ))}

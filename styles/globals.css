@@ -23,3 +23,21 @@ body {
   .filters_mobile {
     @apply absolute lg:hidden bg-secondary h-full  overflow-y-scroll top-0 left-0 w-[70%] sm:min-w-[350px] sm:w-[30%] overflow-hidden z-40 px-8 py-12
   }
+
+  /* CSS for checkboxes */
+
+  .checkboxLabel {
+    @apply hover:cursor-pointer flex flex-row space-x-2;
+  }
+
+  .filterHeading {
+    @apply text-lg font-Borui font-light text-gray-700 mb-4;
+  }
+
+  .checkboxDiv {
+    @apply w-full flex items-center flex-row space-x-2 py-1
+  }
+
+  .checkbox {
+    @apply text-gray-800 font-Gruppo font-bold
+  }

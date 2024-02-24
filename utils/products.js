@@ -73,7 +73,7 @@ export const products = [
     brand: "H&M",
     trending: true,
     image:
-      "https://assets.vogue.com/photos/6258391e9711689c336fb478/1:1/w_2667,h_2667,c_limit/slide_5.jpg",
+      "https://i5.walmartimages.com/asr/0c103dd1-beef-4c03-a081-01f90bc02a97.de616a24efa7cfb632027ef96d0e8f18.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
     type: "Clothing",
     gender: "women",
     rating: 4.2,
@@ -396,12 +396,12 @@ export const products = [
   {
     id: uuid(),
     category: "T-Shirt",
-    title: "Black Short Tshirt",
+    title: "White Fly Tshirt",
     brand: "Nike",
     price: 99,
     trending: false,
     image:
-      "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/7eeec792-972c-4510-b294-0dd426325893/sportswear-womens-slim-fit-cropped-t-shirt-gGzG7C.png",
+      "https://media-www.sportchek.ca/product/div-03-softgoods/dpt-70-athletic-clothing/sdpt-02-womens/334223019/nike-women-nk-df-tee-swoosh-fly-bf-q423-white-da169bac-d2cf-407e-8e73-43c6d8ca0aa8-jpgrendition.jpg",
     type: "Clothing",
     gender: "women",
     rating: 4.1,
