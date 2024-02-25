@@ -1,10 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import {
-  Cog8ToothIcon,
-  MinusIcon,
-  PlusIcon,
-} from "@heroicons/react/24/outline";
+import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
 import { StarIcon } from "@heroicons/react/24/solid";
 import Head from "next/head";
 import { Toaster } from "react-hot-toast";
@@ -40,6 +36,7 @@ const ProductPage = () => {
     } else {
       console.error("Error loading product");
       setLoading(false);
+      router.push("/");
     }
   }, [id]);
 
@@ -96,38 +93,30 @@ const ProductPage = () => {
                 <span className="font-Gruppo uppercase text-pink-600">
                   {product.brand}
                 </span>
-                <div>
-                  <h1 className="font-Borui text-2xl flex space-x-4 md:text-3xl lg:text-4xl text-primary mt-6 mb-4">
-                    {product.title}
-                  </h1>
-                </div>
-
+                <h1 className="font-Borui text-2xl flex space-x-4 md:text-3xl lg:text-4xl text-primary mt-6 mb-4">
+                  {product.title}
+                </h1>
                 <span className="flex flex-row items-center space-x-2 py-2">
                   <span className="text-gray-600 font-Borui text-xl">
                     {product.rating}
                   </span>
                   <StarIcon className="h-5 w-5 text-yellow-500" />
                 </span>
-                <div>
-                  <p className="font-Gruppo text-lg md:text-xl text-gray-500 mb-8">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-                    quasi optio labore qui. Architecto soluta dolores necessitas
-                    esse rem nobis, alias officiis obcaecati, fuga numquam
-                    aliquid ducimus sint minima aperiam.
-                  </p>
-                </div>
+                <p className="font-Gruppo text-lg md:text-xl text-gray-500 mb-6">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
+                  quasi optio labore qui. Architecto soluta dolores necessitas
+                  esse rem nobis, alias officiis obcaecati, fuga numquam aliquid
+                  ducimus sint minima aperiam.
+                </p>
                 {product.trending && (
                   <p className="font-Gruppo text-green-500 uppercase text-[12px] flex flex-row space-x-2 justify-start items-center">
                     <FaHotjar className="text-md text-orange-500" />
                     <span className="text-orange-500">Trending</span>
                   </p>
                 )}
-                <div>
-                  <h1 className="font-Gruppo text-2xl md:text-3xl lg:text-4xl text-gray-600 my-6">
-                    ${product.price}
-                  </h1>
-                </div>
-
+                <h1 className="font-Gruppo text-2xl md:text-3xl lg:text-4xl text-gray-600 my-6">
+                  ${product.price}
+                </h1>
                 <div className="grid grid-cols-3 gap-4 py-2">
                   <div className="flex flex-row items-center justify-center p-4 border border-gray-300 space-x-4">
                     <MinusIcon
@@ -188,7 +177,7 @@ const ProductPage = () => {
           </div>
         </>
       )}
-      {loading && <Spinner />}
+      {loading && !product && <Spinner />}
     </>
   );
 };

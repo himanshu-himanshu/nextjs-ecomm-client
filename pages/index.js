@@ -21,7 +21,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <Banner />
-      <Trending />
+      <Trending showTrending={false} />
       <GenderSection />
       <Quote quote="Fashions fade. Style is eternal." />
       <PopularCategories />

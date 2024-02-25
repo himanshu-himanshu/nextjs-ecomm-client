@@ -40,7 +40,6 @@ const ProductsListing = ({ productsArray, gender }) => {
    * USE EFFECT for handling the filtering logic
    */
   useEffect(() => {
-    console.log(ratings);
     const filterProducts = () => {
       if (
         selectedCategoriesArray.length > 0 ||
@@ -107,7 +106,7 @@ const ProductsListing = ({ productsArray, gender }) => {
         <div className="flex flex-row">
           <div className="flex lg:hidden mr-4">
             <button onClick={() => handleFiltersOpen()}>
-              <AdjustmentsHorizontalIcon class="h-7 w-7 text-primary" />
+              <AdjustmentsHorizontalIcon className="h-7 w-7 text-primary" />
             </button>
           </div>
           <h1 className="text-4xl lg:text-5xl font-Gruppo uppercase">
@@ -160,7 +159,7 @@ const ProductsListing = ({ productsArray, gender }) => {
             {!filterInProcess &&
               !noProductsFound &&
               unfilteredProductsArray.map((item) => (
-                <Product item={item} key={item.id} />
+                <Product item={item} key={item.id} showTrending={true} />
               ))}
             {!filterInProcess && noProductsFound && (
               <div className="flex justify-center items-center py-24 flex-col space-y-2 font-Gruppo text-gray-600">

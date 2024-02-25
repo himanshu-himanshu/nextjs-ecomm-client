@@ -10,7 +10,7 @@ const Cart = ({ ...restProps }) => {
         className="absolute"
         onClick={() => restProps.handleOpenCart()}
       >
-        <ShoppingBagIcon class="h-6 w-6 text-primary" />
+        <ShoppingBagIcon className="h-6 w-6 text-primary" />
       </a>
       <span className="relative flex items-center justify-center top-2 -right-4 h-5 w-5 rounded-full bg-[#113034] text-white text-xs">
         {totalItems}

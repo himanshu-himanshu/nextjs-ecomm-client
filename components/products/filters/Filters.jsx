@@ -163,7 +163,7 @@ const Body = ({
         <h1 className="filterHeading">Customer Rating</h1>
         <div className="w-full flex items-start flex-col space-y-3 py-2">
           {[1, 2, 3, 4].map((value) => (
-            <label className="checkboxLabel">
+            <label className="checkboxLabel" key={value}>
               <input
                 type="checkbox"
                 onChange={() => {

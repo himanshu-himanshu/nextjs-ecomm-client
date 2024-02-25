@@ -2,7 +2,7 @@ import uuid from "react-uuid";
 
 export const products = [
   {
-    id: uuid(),
+    id: "7bdf17fb-63de-4e32-a3e9-d93f1fc2e891",
     category: "Hoodie",
     title: "Black Hoodie",
     brand: "Nike",
@@ -15,7 +15,7 @@ export const products = [
     rating: 4,
   },
   {
-    id: uuid(),
+    id: "a0d25d6a-fc0b-4e51-8550-0658e1602ba5",
     category: "Sweater",
     title: "Sweater",
     brand: "Guess",
@@ -28,7 +28,7 @@ export const products = [
     rating: 4.5,
   },
   {
-    id: uuid(),
+    id: "e8a526f1-0e6f-4f79-a8d3-9b8f3e4f0843",
     category: "T-Shirt",
     title: "Printed T-Shirt",
     brand: "Gap",
@@ -41,7 +41,7 @@ export const products = [
     rating: 3.2,
   },
   {
-    id: uuid(),
+    id: "3907b150-1a95-45c8-94d7-d0c96ec58d7d",
     category: "Sweater",
     title: "Blue Sweater",
     brand: "Gap",
@@ -53,7 +53,7 @@ export const products = [
     rating: 5,
   },
   {
-    id: uuid(),
+    id: "fcb6f080-7c10-4e0c-8b3d-66b9b4130b48",
     category: "Sweater",
     title: "Rainbow Sweater",
     brand: "Simons",
@@ -66,7 +66,7 @@ export const products = [
     rating: 4.8,
   },
   {
-    id: uuid(),
+    id: "c8d8745b-9258-4e5e-9023-002ff78c6c65",
     category: "Skirt",
     title: "Cotton Skirt",
     price: 190,
@@ -79,7 +79,7 @@ export const products = [
     rating: 4.2,
   },
   {
-    id: uuid(),
+    id: "29f28f4a-5351-4fc5-8b5a-6b6dd8a82840",
     category: "T-Shirt",
     title: "Long Sleves",
     brand: "Levis",
@@ -91,7 +91,7 @@ export const products = [
     rating: 4,
   },
   {
-    id: uuid(),
+    id: "869d2d35-2a1c-4b26-99ae-2fd601fd88e0",
     category: "Sweater",
     title: "Sweatshirt",
     brand: "Banana Republic",
@@ -106,7 +106,7 @@ export const products = [
   /** More Products */
 
   {
-    id: uuid(),
+    id: "8aef306b-82a0-45e6-8f84-8712bf4a6c6c",
     category: "T-Shirt",
     title: "Red Stripe Shirt",
     brand: "Guess",
@@ -119,7 +119,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "5965a7e8-4138-45ae-bb5a-35c906b3b82f",
     category: "T-Shirt",
     title: "Polo Gray Stripe",
     brand: "Guess",
@@ -132,7 +132,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "b18edbe0-9dd4-49f0-804d-82876d3cb0b1",
     category: "Pants",
     title: "Formal Khake Pant",
     brand: "H&M",
@@ -145,7 +145,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "2e34f38d-cc91-47e2-94a5-74621aa6d999",
     category: "Jogger",
     title: "Casual Jogger",
     brand: "H&M",
@@ -159,7 +159,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "f3dcd9ac-c726-479f-9f21-ba58d56c9b2b",
     category: "Jogger",
     title: "Cargo Pant",
     brand: "H&M",
@@ -172,7 +172,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "3c8c2279-af68-4480-8135-aa8999a4ad73",
     category: "Pants",
     title: "Blue Dennim",
     brand: "Levis",
@@ -186,7 +186,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "1dd17c69-d145-42d4-8f7b-20dbd4ffed14",
     category: "Jacket",
     title: "Red Everest Bomber",
     brand: "The North Face",
@@ -200,7 +200,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "0c5a617b-cc73-41c5-bf1e-5bb9bdf23bc1",
     category: "Jacket",
     title: "Refurbished Bomber",
     brand: "The North Face",
@@ -214,7 +214,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "9d509781-9a8d-4a4b-8f16-2e308ea3a717",
     category: "Shirt",
     title: "Floral Short Sleeve",
     brand: "Hudson Bay",
@@ -228,7 +228,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "8e8fe6f7-c618-4090-8cf4-d5a159e34cb2",
     category: "Jacket",
     title: "Green Pellat",
     brand: "Calvin Klein",
@@ -242,7 +242,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "f2c9bfb1-818d-48a6-8f94-60d2f30e0804",
     category: "Jacket",
     title: "Woolen Bomber",
     brand: "Simons",
@@ -256,7 +256,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "58f35dcb-2d94-4a78-b88f-c12b44545c2b",
     category: "T-Shirt",
     title: "Graphic Logo Print",
     brand: "Gucci",
@@ -269,7 +269,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "58f35dcb-1294-4a78-b88f-c12b44545c2b",
     category: "Hoodie",
     title: "White Logo Hoodie",
     brand: "Gucci",
@@ -283,7 +283,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "58f35dcb-2d94-4a78-b88f-c12xzz545c2b",
     category: "Shoes",
     title: "Leather Sneakers",
     brand: "Woodland",
@@ -299,7 +299,7 @@ export const products = [
   /*** WOMEN'S PRODUCTS */
 
   {
-    id: uuid(),
+    id: "58109dcb-2d94-4a78-b88f-c12b44545c2b",
     category: "Skirt",
     title: "Backless Short Skirt",
     brand: "Simons",
@@ -312,7 +312,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "3dd17c69-d145-42d4-8f7b-20dbd4ffed00",
     category: "Shirt",
     title: "Cotton Loose Shirt",
     brand: "Calvin Klein",
@@ -326,7 +326,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "3dd17c69-d145-1111-8f7b-20dbd4ffed00",
     category: "Pants",
     title: "Floral Bell Bottom",
     brand: "Mango",
@@ -340,7 +340,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "3dd17c69-d145-42d4-1010-20dbd4ffed00",
     category: "Pants",
     title: "Gray Slim Fit",
     brand: "Levis",
@@ -353,7 +353,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "3dd17aaa-d145-42d4-8f7b-20dbd4ffed00",
     category: "Kurta",
     title: "Straight Kurta",
     brand: "H&M",
@@ -366,7 +366,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "3dd17c69-d145-42d4-8f7b-20d080ffed00",
     category: "Pants",
     title: "Bottom Jogger Pants",
     brand: "Reebok",
@@ -380,7 +380,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "3dd17c69-d145-42d4-sass-20dbd4ffed00",
     category: "Pants",
     title: "Ziper Wide Long",
     brand: "Walmart",
@@ -394,7 +394,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "3dd17c69-l145-42d4-12al-20dbd4ffed00",
     category: "T-Shirt",
     title: "White Fly Tshirt",
     brand: "Nike",
@@ -408,7 +408,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "3dd17c69-zzaz-42d4-8f7b-20dbd4ffed00",
     category: "Shirt",
     title: "Corral Western",
     brand: "American Eagle",
@@ -422,7 +422,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "3dd0mo69-d145-42d4-8f7b-20dbd4ffed00",
     category: "Hoodie",
     title: "Yellow Sweatshirt",
     brand: "Adidas",
@@ -435,7 +435,7 @@ export const products = [
   },
 
   {
-    id: uuid(),
+    id: "3dd17c69-d145-42d4-8f7b-2111d4ffed00",
     category: "Hoodie",
     title: "Cream Printed Jacket",
     brand: "Banana Republic",

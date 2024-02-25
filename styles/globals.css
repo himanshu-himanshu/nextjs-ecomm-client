@@ -15,11 +15,6 @@ body {
     display: none;
   }
 
-
-  .filters {
-    @apply sticky top-0 hidden h-full flex-col lg:flex w-1/5 py-12 px-4 
-  }
-
   .filters_mobile {
     @apply absolute lg:hidden bg-secondary h-full  overflow-y-scroll top-0 left-0 w-[70%] sm:min-w-[350px] sm:w-[30%] overflow-hidden z-40 px-8 py-12
   }

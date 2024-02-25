@@ -9,7 +9,7 @@ import { showToast } from "../../utils/showToast";
 import { ImSpinner10 } from "react-icons/im";
 import { FaHotjar } from "react-icons/fa";
 
-const Product = ({ item }) => {
+const Product = ({ item, showTrending }) => {
   const [addingToCart, setAddingToCart] = useState(false);
   const dispatch = useDispatch();
   const router = useRouter();
@@ -45,7 +45,7 @@ const Product = ({ item }) => {
         onClick={(e) => handleProductRedirect(e)}
         className="relative group flex flex-col justify-center items-center hover:cursor-pointer duration-300 border border-gray-10"
       >
-        {item.trending && (
+        {item.trending && showTrending && (
           <div className="absolute p-3 top-0 right-0 z-30 flex justify-center items-center">
             <FaHotjar className="text-xl text-orange-500" />
           </div>
