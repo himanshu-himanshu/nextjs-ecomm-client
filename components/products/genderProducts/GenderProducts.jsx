@@ -4,7 +4,7 @@
 
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
-import { Quote, Navbar, Footer } from "../../../components";
+import { Quote, Navbar, Footer, Trending } from "../../../components";
 import { products } from "../../../utils/products";
 import Spinner from "../../../utils/Spinner";
 import ProductsListing from "../../../components/products/productListing/ProductsListing";
@@ -37,6 +37,7 @@ const GenderProducts = ({ gender }) => {
             gender={gender === "men" ? "Men's" : "Women's"}
           />
           <Quote quote={"Forget the rules, if you like it, wear it."} />
+          <Trending />
           <Footer />
         </>
       )}

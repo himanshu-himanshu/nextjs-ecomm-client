@@ -16,6 +16,7 @@ import { useDispatch } from "react-redux";
 import { showToast } from "../../utils/showToast";
 import { LiaCartArrowDownSolid } from "react-icons/lia";
 import { ImSpinner10 } from "react-icons/im";
+import { FaHotjar } from "react-icons/fa";
 
 const ProductPage = () => {
   const router = useRouter();
@@ -96,10 +97,11 @@ const ProductPage = () => {
                   {product.brand}
                 </span>
                 <div>
-                  <h1 className="font-Borui text-2xl md:text-3xl lg:text-4xl text-primary mt-6 mb-4">
+                  <h1 className="font-Borui text-2xl flex space-x-4 md:text-3xl lg:text-4xl text-primary mt-6 mb-4">
                     {product.title}
                   </h1>
                 </div>
+
                 <span className="flex flex-row items-center space-x-2 py-2">
                   <span className="text-gray-600 font-Borui text-xl">
                     {product.rating}
@@ -114,9 +116,12 @@ const ProductPage = () => {
                     aliquid ducimus sint minima aperiam.
                   </p>
                 </div>
-                <p className="font-Gruppo text-green-500 uppercase text-[12px]">
-                  ⦿ In Stock
-                </p>
+                {product.trending && (
+                  <p className="font-Gruppo text-green-500 uppercase text-[12px] flex flex-row space-x-2 justify-start items-center">
+                    <FaHotjar className="text-md text-orange-500" />
+                    <span className="text-orange-500">Trending</span>
+                  </p>
+                )}
                 <div>
                   <h1 className="font-Gruppo text-2xl md:text-3xl lg:text-4xl text-gray-600 my-6">
                     ${product.price}

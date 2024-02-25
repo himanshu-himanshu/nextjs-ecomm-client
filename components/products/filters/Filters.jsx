@@ -57,7 +57,7 @@ const Filters = ({
           animate={{ x: 0, opacity: 100 }}
           transition={{ duration: 0.4 }}
           whileInView={true}
-          className={`filters_mobile`}
+          className="absolute lg:hidden bg-secondary h-full  overflow-y-scroll top-0 left-0 w-[70%] sm:min-w-[350px] sm:w-[30%] overflow-hidden z-40 px-8 py-12"
         >
           <div className="flex flex-row justify-between items-center pb-6 font-extralight">
             <h1 className="text-2xl uppercase font-Borui font-light text-gray-700">
@@ -81,7 +81,7 @@ const Filters = ({
         </motion.div>
       )}
       {!isFiltersOpen && (
-        <div className={`filters`}>
+        <div className="sticky top-0 hidden h-full flex-col lg:flex w-1/5 py-12 px-4">
           <Body
             productsArray={productsArray}
             handleCategorySelection={handleCategorySelection}

@@ -95,15 +95,35 @@ const ProductsListing = ({ productsArray, gender }) => {
     setIsFiltersOpen(false);
   };
 
+  const handleClearFilters = () => {
+    setSelectedBrandArray([]);
+    setSelectedCategoriesArray([]);
+    setRatings(null);
+  };
+
   return (
     <div className="h-full w-full py-6 lg:py-12 px-2 lg:px-6 mt-4">
-      <div className="flex justify-start p-4 px-6">
-        <div className="flex lg:hidden mr-8">
-          <button onClick={() => handleFiltersOpen()}>
-            <AdjustmentsHorizontalIcon class="h-7 w-7 text-primary" />
-          </button>
+      <div className="flex justify-between items-center p-4 px-6">
+        <div className="flex flex-row">
+          <div className="flex lg:hidden mr-4">
+            <button onClick={() => handleFiltersOpen()}>
+              <AdjustmentsHorizontalIcon class="h-7 w-7 text-primary" />
+            </button>
+          </div>
+          <h1 className="text-4xl lg:text-5xl font-Gruppo uppercase">
+            {gender}
+          </h1>
         </div>
-        <h1 className="text-4xl lg:text-5xl font-Gruppo uppercase">{gender}</h1>
+        {(selectedCategoriesArray.length > 0 ||
+          selectedBrandArray.length > 0 ||
+          ratings) && (
+          <button
+            onClick={handleClearFilters}
+            className="font-Gruppo text-red-600 p-2 border-red-600 transition duration-300 hover:bg-red-600 hover:text-white"
+          >
+            Clear Filters
+          </button>
+        )}
       </div>
       <div className="flex flex-row">
         <Filters

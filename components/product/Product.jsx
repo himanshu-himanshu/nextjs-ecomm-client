@@ -3,12 +3,11 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../../redux/features/cart/cartSlice";
 import { Toaster } from "react-hot-toast";
-import { Cog8ToothIcon } from "@heroicons/react/24/outline";
-import { StarIcon, HeartIcon } from "@heroicons/react/24/solid";
+import { StarIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import { showToast } from "../../utils/showToast";
-import { LiaCartArrowDownSolid } from "react-icons/lia";
 import { ImSpinner10 } from "react-icons/im";
+import { FaHotjar } from "react-icons/fa";
 
 const Product = ({ item }) => {
   const [addingToCart, setAddingToCart] = useState(false);
@@ -44,8 +43,14 @@ const Product = ({ item }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7, ease: "anticipate" }}
         onClick={(e) => handleProductRedirect(e)}
-        className="group flex flex-col justify-center items-center hover:cursor-pointer duration-300 border border-gray-10"
+        className="relative group flex flex-col justify-center items-center hover:cursor-pointer duration-300 border border-gray-10"
       >
+        {item.trending && (
+          <div className="absolute p-3 top-0 right-0 z-30 flex justify-center items-center">
+            <FaHotjar className="text-xl text-orange-500" />
+          </div>
+        )}
+
         <div className="relative duration-300 px-2 py-4 w-full h-full">
           <div className="absolute h-full w-full top-0 left-0 z-10 group-hover:bg-gray-100/40 transition duration-200" />
           <img
@@ -94,23 +99,3 @@ const Product = ({ item }) => {
 };
 
 export default Product;
-
-{
-  /* {!addingToCart ? (
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="w-[200px] py-6 px-2 bg-gray-100 uppercase tracking-wide duration-300 hover:bg-black/90 hover:text-gray-100"
-                onClick={(e) => {
-                  e.stopPropagation(); // Stop event propagation
-                  addToCart();
-                }}
-              >
-                Add to Cart
-              </motion.button>
-            ) : (
-              <button className="w-[200px] py-5 px-2 bg-secondary uppercase tracking-wide duration-300 flex justify-center items-center">
-                <Cog8ToothIcon className="h-8 w-8 text-primary animate-spin" />
-              </button>
-            )} */
-}
