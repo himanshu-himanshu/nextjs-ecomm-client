@@ -17,7 +17,7 @@ body {
 
 
   .filters {
-    @apply sticky top-0 hidden h-full flex-col lg:flex w-1/5 py-12 px-4
+    @apply sticky top-0 hidden h-full flex-col lg:flex w-1/5 py-12 px-4 
   }
 
   .filters_mobile {

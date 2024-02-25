@@ -4,7 +4,6 @@ import {
   Cog8ToothIcon,
   MinusIcon,
   PlusIcon,
-  ShoppingBagIcon,
 } from "@heroicons/react/24/outline";
 import { StarIcon } from "@heroicons/react/24/solid";
 import Head from "next/head";
@@ -15,6 +14,8 @@ import { products } from "./../../utils/products";
 import Spinner from "../../utils/Spinner";
 import { useDispatch } from "react-redux";
 import { showToast } from "../../utils/showToast";
+import { LiaCartArrowDownSolid } from "react-icons/lia";
+import { ImSpinner10 } from "react-icons/im";
 
 const ProductPage = () => {
   const router = useRouter();
@@ -81,7 +82,7 @@ const ProductPage = () => {
       <Navbar />
       {!loading && product && (
         <>
-          <div className="h-full w-full py-16 px-6 mt-4">
+          <div className="h-full w-full py-16 px-6 mt-4 z-30">
             <div className="max-w-5xl lg:max-w-6xl mx-auto h-full grid grid-col-1 md:grid-cols-2 md:gap-8 lg:gap-12">
               <div className="flex justify-center">
                 <img
@@ -106,7 +107,7 @@ const ProductPage = () => {
                   <StarIcon className="h-5 w-5 text-yellow-500" />
                 </span>
                 <div>
-                  <p className="font-Gruppo text-lg md:text-xl text-primary mb-8">
+                  <p className="font-Gruppo text-lg md:text-xl text-gray-500 mb-8">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
                     quasi optio labore qui. Architecto soluta dolores necessitas
                     esse rem nobis, alias officiis obcaecati, fuga numquam
@@ -117,7 +118,7 @@ const ProductPage = () => {
                   ⦿ In Stock
                 </p>
                 <div>
-                  <h1 className="font-Gruppo text-2xl md:text-3xl lg:text-4xl text-primary my-6">
+                  <h1 className="font-Gruppo text-2xl md:text-3xl lg:text-4xl text-gray-600 my-6">
                     ${product.price}
                   </h1>
                 </div>
@@ -152,16 +153,18 @@ const ProductPage = () => {
                   </div>
                   <div className="flex flex-row items-center justify-between col-span-2">
                     <button
-                      className="group flex justify-center items-center py-4 sm:py-5 w-full border border-primary bg-white hover:bg-primary duration-200 font-Gruppo font-extrabold text-lg md:text-xl shadow-sm hover:shadow-lg"
                       onClick={(e) => {
                         addToCart();
                       }}
+                      className="group flex justify-center border border-primary items-center overflow-hidden py-4 sm:py-5 relative w-full text-primary -- before:block before:absolute before:h-full before:w-full before:bg-primary before:left-0 before:bottom-0 duration-300 before:-translate-y-full hover:before:translate-y-0 before:transition-transform text-lg md:text-xl shadow-sm hover:shadow-lg"
                     >
-                      {!addingToCart ? (
-                        <ShoppingBagIcon className="h-8 w-8 text-primary group-hover:text-secondary" />
-                      ) : (
-                        <Cog8ToothIcon className="h-8 w-8 text-secondary animate-spin" />
-                      )}
+                      <span className="relative">
+                        {!addingToCart ? (
+                          <LiaCartArrowDownSolid className="text-4xl text-primary group-hover:text-secondary" />
+                        ) : (
+                          <ImSpinner10 className="text-4xl text-primary group-hover:text-secondary animate-spin" />
+                        )}
+                      </span>
                     </button>
                   </div>
                 </div>

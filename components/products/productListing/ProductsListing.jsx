@@ -26,6 +26,7 @@ const ProductsListing = ({ productsArray, gender }) => {
     const mediaQuery = window.matchMedia("(min-width: 1024px)"); // Change the width as per your 'lg' breakpoint
     const handleScreenChange = () => {
       setIsFiltersOpen(!mediaQuery.matches ? false : ""); // Set isFiltersOpen to false when screen size is large
+      document.body.style.overflow = "unset";
     };
     // Check initial screen size
     handleScreenChange();
@@ -109,6 +110,7 @@ const ProductsListing = ({ productsArray, gender }) => {
           productsArray={productsArray}
           selectedCategoriesArray={selectedCategoriesArray}
           setSelectedCategoriesArray={setSelectedCategoriesArray}
+          selectedBrandsArray={selectedBrandArray}
           setSelectedBrandArray={setSelectedBrandArray}
           isFiltersOpen={isFiltersOpen}
           handleFiltersClose={handleFiltersClose}

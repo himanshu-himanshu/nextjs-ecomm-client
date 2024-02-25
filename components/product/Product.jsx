@@ -7,6 +7,8 @@ import { Cog8ToothIcon } from "@heroicons/react/24/outline";
 import { StarIcon, HeartIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import { showToast } from "../../utils/showToast";
+import { LiaCartArrowDownSolid } from "react-icons/lia";
+import { ImSpinner10 } from "react-icons/im";
 
 const Product = ({ item }) => {
   const [addingToCart, setAddingToCart] = useState(false);
@@ -42,32 +44,33 @@ const Product = ({ item }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7, ease: "anticipate" }}
         onClick={(e) => handleProductRedirect(e)}
-        className=" flex flex-col justify-center items-center hover:cursor-pointer duration-300 border border-gray-100"
+        className="group flex flex-col justify-center items-center hover:cursor-pointer duration-300 border border-gray-10"
       >
-        <div className="group relative duration-300 px-2 py-4">
+        <div className="relative duration-300 px-2 py-4 w-full h-full">
+          <div className="absolute h-full w-full top-0 left-0 z-10 group-hover:bg-gray-100/40 transition duration-200" />
           <img
             src={item.image}
             alt=""
-            className="w-full h-[180px] sm:h-[220px] md:h-60 lg:h-60 xl:h-80"
+            className="w-auto mx-auto h-[180px] sm:h-[220px] md:h-60 lg:h-60 xl:h-80 z-30"
           />
-          <div className="hidden absolute h-full w-full top-0 left-0 group-hover:flex justify-center items-center duration-300 bg-gray-100/40 z-40">
-            {!addingToCart ? (
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="w-[200px] py-6 px-2 bg-gray-100 uppercase tracking-wide duration-300 hover:bg-black/90 hover:text-gray-100"
-                onClick={(e) => {
-                  e.stopPropagation(); // Stop event propagation
-                  addToCart();
-                }}
-              >
-                Add to Cart
-              </motion.button>
-            ) : (
-              <button className="w-[200px] py-5 px-2 bg-secondary uppercase tracking-wide duration-300 flex justify-center items-center">
-                <Cog8ToothIcon className="h-8 w-8 text-primary animate-spin" />
-              </button>
-            )}
+          <div className="hidden absolute h-full w-full top-0 left-0 group-hover:flex justify-center items-center z-30">
+            <button
+              onClick={(e) => {
+                e.stopPropagation(); // Stop event propagation
+                addToCart();
+              }}
+              className="group w-[220px] py-6 px-2 flex justify-center bg-gray-100 hover:bg-primary hover:text-gray-100 items-center overflow-hidden sm:py-5 relative text-primary -- before:block before:absolute before:h-full before:w-full before:bg-primary before:left-0 before:bottom-0 duration-300 before:-translate-y-full hover:before:translate-y-0 before:transition-transform text-lg md:text-xl shadow-sm hover:shadow-lg"
+            >
+              <span className="relative">
+                {!addingToCart ? (
+                  <span className="uppercase tracking-wide text-[16px] font-Gruppo font-extrabold">
+                    Add to Cart
+                  </span>
+                ) : (
+                  <ImSpinner10 className="text-[30px] text-primary group-hover:text-secondary animate-spin" />
+                )}
+              </span>
+            </button>
           </div>
         </div>
         <div className="w-full px-2 pb-1 flex flex-row justify-between items-center font-Borui">
@@ -91,3 +94,23 @@ const Product = ({ item }) => {
 };
 
 export default Product;
+
+{
+  /* {!addingToCart ? (
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="w-[200px] py-6 px-2 bg-gray-100 uppercase tracking-wide duration-300 hover:bg-black/90 hover:text-gray-100"
+                onClick={(e) => {
+                  e.stopPropagation(); // Stop event propagation
+                  addToCart();
+                }}
+              >
+                Add to Cart
+              </motion.button>
+            ) : (
+              <button className="w-[200px] py-5 px-2 bg-secondary uppercase tracking-wide duration-300 flex justify-center items-center">
+                <Cog8ToothIcon className="h-8 w-8 text-primary animate-spin" />
+              </button>
+            )} */
+}
