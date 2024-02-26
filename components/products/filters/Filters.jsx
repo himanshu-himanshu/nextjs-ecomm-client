@@ -115,7 +115,7 @@ const Body = ({
 }) => {
   return (
     <>
-      <div className="w-full p-2 mb-4">
+      <div className="w-full mb-4">
         <h1 className="filterHeading">Category</h1>
         {productsArray
           .map((product) => product.category)

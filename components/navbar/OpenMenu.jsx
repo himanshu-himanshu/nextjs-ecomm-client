@@ -11,14 +11,14 @@ const OpenMenu = ({ handleCloseMenu }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.5 }}
         transition={{ duration: 0.2 }}
-        className="bg-gray-800 lg:hidden absolute w-full h-full top-0 left-0 overflow-hidden cursor-crosshair z-20"
+        className="hidden bg-gray-800 lg:hidden absolute w-full h-full top-0 left-0 overflow-hidden cursor-crosshair z-20"
         onClick={() => handleCloseMenu()}
       ></motion.div>
       <motion.div
         initial={{ x: "-100%" }}
         animate={{ x: 0 }}
         transition={{ duration: 0.5 }}
-        className="absolute lg:hidden h-full bg-white top-0 left-0 w-full sm:min-w-[500px] sm:w-1/3 overflow-hidden z-40"
+        className="absolute hidden h-full bg-white top-0 left-0 w-full sm:min-w-[500px] sm:w-1/3 overflow-hidden z-40"
       >
         <div className="flex flex-col px-6 py-6 h-full">
           <div

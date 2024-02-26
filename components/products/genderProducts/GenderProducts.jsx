@@ -37,7 +37,7 @@ const GenderProducts = ({ gender }) => {
             gender={gender === "men" ? "Men's" : "Women's"}
           />
           <Quote quote={"Forget the rules, if you like it, wear it."} />
-          <Trending showTrending={true} />
+          <Trending showTrending={false} />
           <Footer />
         </>
       )}

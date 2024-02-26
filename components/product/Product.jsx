@@ -58,21 +58,21 @@ const Product = ({ item, showTrending }) => {
             alt=""
             className="w-auto mx-auto h-[180px] sm:h-[220px] md:h-60 lg:h-60 xl:h-80 z-30"
           />
-          <div className="hidden absolute h-full w-full top-0 left-0 group-hover:flex justify-center items-center z-30">
+          <div className="hidden lg:absolute h-full w-full top-0 left-0 lg:group-hover:flex justify-center items-center z-30">
             <button
               onClick={(e) => {
                 e.stopPropagation(); // Stop event propagation
                 addToCart();
               }}
-              className="group w-[220px] py-6 px-2 flex justify-center bg-gray-100 hover:bg-primary hover:text-gray-100 items-center overflow-hidden sm:py-5 relative text-primary -- before:block before:absolute before:h-full before:w-full before:bg-primary before:left-0 before:bottom-0 duration-300 before:-translate-y-full hover:before:translate-y-0 before:transition-transform text-lg md:text-xl shadow-sm hover:shadow-lg"
+              className="group w-[180px] xl:w-[210px] py-5 px-2 x:py-6 flex justify-center bg-gray-100 hover:bg-primary hover:text-gray-100 items-center overflow-hidden relative text-primary -- before:block before:absolute before:h-full before:w-full before:bg-primary before:left-0 before:bottom-0 duration-300 before:-translate-y-full hover:before:translate-y-0 before:transition-transform shadow-sm hover:shadow-lg"
             >
-              <span className="relative">
+              <span className="relative max-h-[24px]">
                 {!addingToCart ? (
-                  <span className="uppercase tracking-wide text-[16px] font-Gruppo font-extrabold">
+                  <span className="uppercase tracking-wide text-[14px] md:text-[16px] font-Gruppo font-extrabold">
                     Add to Cart
                   </span>
                 ) : (
-                  <ImSpinner10 className="text-[30px] text-primary group-hover:text-secondary animate-spin" />
+                  <ImSpinner10 className="text-[28px] text-primary group-hover:text-secondary animate-spin" />
                 )}
               </span>
             </button>

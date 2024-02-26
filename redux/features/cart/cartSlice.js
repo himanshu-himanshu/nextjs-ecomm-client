@@ -18,24 +18,6 @@ const cartSlice = createSlice({
       state.totalItems = 0;
     },
 
-    // /** Function to add Item to the cart */
-    // addItemToCart: (state, action) => {
-    //   const { id } = action.payload;
-
-    //   const existingItem = state.cartItems.find((item) => item.id === id);
-
-    //   if (existingItem) {
-    //     existingItem.quantity += 1;
-    //     state.amount += existingItem.price;
-    //   } else {
-    //     const newItem = { ...action.payload, quantity: 1 };
-    //     state.cartItems.push(newItem);
-    //     state.amount += newItem.price;
-    //   }
-
-    //   state.totalItems += 1;
-    // },
-
     /** Function to add Item to the cart */
     addItemToCart: (state, action) => {
       const { id, quantity } = action.payload;

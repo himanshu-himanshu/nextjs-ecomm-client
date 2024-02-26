@@ -11,7 +11,7 @@ const Trending = ({ showTrending }) => {
           Trending Now
         </h1>
       </div>
-      <div className="text-black grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8 py-12 px-2 md:px-6">
+      <div className="text-black grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 py-12 px-2 md:px-6">
         {products.map(
           (item) =>
             item.trending && (

@@ -102,7 +102,7 @@ const ProductsListing = ({ productsArray, gender }) => {
 
   return (
     <div className="h-full w-full py-6 lg:py-12 px-2 lg:px-6 mt-4">
-      <div className="flex justify-between items-center p-4 px-6">
+      <div className="flex justify-between items-center p-4">
         <div className="flex flex-row">
           <div className="flex lg:hidden mr-4">
             <button onClick={() => handleFiltersOpen()}>
@@ -118,7 +118,7 @@ const ProductsListing = ({ productsArray, gender }) => {
           ratings) && (
           <button
             onClick={handleClearFilters}
-            className="font-Gruppo text-red-600 p-2 border-red-600 transition duration-300 hover:bg-red-600 hover:text-white"
+            className="font-Gruppo text-red-600 p-1 sm:p-2 border-[0.5px] border-red-600 transition duration-300 hover:bg-red-600 hover:text-white"
           >
             Clear Filters
           </button>

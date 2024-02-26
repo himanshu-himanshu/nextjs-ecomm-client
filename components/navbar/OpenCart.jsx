@@ -10,9 +10,12 @@ import {
   updateQuantity,
   deleteItem,
 } from "../../redux/features/cart/cartSlice";
+import { BsCartX } from "react-icons/bs";
+import { useRouter } from "next/router";
 
 const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
   const dispatch = useDispatch();
+  const router = useRouter();
   const items = useSelector((store) => store.cart.cartItems);
   const totalAmount = useSelector((store) => store.cart.amount);
 
@@ -134,10 +137,13 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
               <h1 className="text-[14px] tracking-wide flex justify-end items-end font-Gruppo mt-4 mb-6">
                 <span>Shipping & taxes calculated at checkout</span>
               </h1>
-              <div className="w-full font-bold uppercase px-6 py-5 bg-primary/90 border border-primary text-secondary hover:bg-primary hover:text-white duration-200 font-Gruppo flex justify-center items-center space-x-3 hover:cursor-pointer shadow-sm">
-                <button className="text-lg tracking-wider uppercase">
+              <div
+                onClick={() => router.push("/checkout")}
+                className="w-full font-bold uppercase px-6 py-5 bg-primary/90 border border-primary text-secondary hover:bg-primary hover:text-white duration-200 font-Gruppo flex justify-center items-center space-x-3 hover:cursor-pointer shadow-sm"
+              >
+                <span className="text-lg tracking-wider uppercase">
                   Checkout
-                </button>
+                </span>
                 <CheckBadgeIcon className="h-5 w-5" />
                 <span className="text-lg font-extrabold tracking-wider w-[120px] h-full">
                   ${totalAmount} CAD

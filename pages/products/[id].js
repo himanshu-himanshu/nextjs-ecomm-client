@@ -36,7 +36,7 @@ const ProductPage = () => {
     } else {
       console.error("Error loading product");
       setLoading(false);
-      router.push("/");
+      //router.push("/");
     }
   }, [id]);
 

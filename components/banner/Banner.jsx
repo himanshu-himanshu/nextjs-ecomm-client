@@ -4,22 +4,22 @@ import { motion } from "framer-motion";
 const Banner = () => {
   return (
     <motion.div
-      initial={{ x: 1000, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ type: "spring", damping: 12 }}
       className="relative w-full h-[90vh] z-10 font-Montserrat overflow-hidden bg-banner bg-center bg-cover"
     >
       <motion.div
-        initial={{ x: 3000, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ type: "spring", damping: 10, delay: 0.8 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ type: "spring", damping: 10, delay: 0.4 }}
         className="absolute w-full h-full top-0 left-0 -z-20 bg-primary/30"
       ></motion.div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
+        transition={{ delay: 0.8 }}
         className="container max-w-7xl mx-auto flex flex-col justify-center items-center sm:items-start h-full px-4 md:px-8 z-40"
       >
         <p className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold">

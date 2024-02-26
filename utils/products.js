@@ -301,11 +301,11 @@ export const products = [
   {
     id: "58109dcb-2d94-4a78-b88f-c12b44545c2b",
     category: "Skirt",
-    title: "Backless Short Skirt",
+    title: "Gray Short Skirt",
     brand: "Simons",
     price: 39,
     trending: false,
-    image: "https://ae03.alicdn.com/kf/Sb6e804185c79466b8b08f6c32716c15dj.jpg",
+    image: "https://m.media-amazon.com/images/I/619LWPTjT6L._AC_UY1000_.jpg",
     type: "Clothing",
     gender: "women",
     rating: 3.9,

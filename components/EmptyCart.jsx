@@ -1,6 +1,7 @@
 import React from "react";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import { BsCartX } from "react-icons/bs";
 
 const EmptyCart = () => {
   return (
@@ -10,7 +11,7 @@ const EmptyCart = () => {
       transition={{ type: "spring", damping: 10 }}
       className="flex flex-col items-center justify-center space-y-4"
     >
-      <ShoppingCartIcon className="h-24 w-24 text-primary/70" />
+      <BsCartX className="text-6xl text-gray-500" />
       <h1 className="text-2xl md:text-3xl font-Gruppo tracking-tight text-primary flex justify-center items-center">
         Your cart is currently empty !
       </h1>
