@@ -18,7 +18,7 @@ module.exports = {
       backgroundImage: {
         men_section: "url('../public/assets/menProducts.jpg')",
         women_section: "url('../public/assets/womenProducts.jpg')",
-        banner: "url('../public/assets/banner.jpg')",
+        banner: "url('../public/static/images/banner.jpg')",
         jacket: "url('../public/assets/jacket.jpg')",
         pant: "url('../public/assets/pant.jpg')",
         tshirt: "url('../public/assets/tshirt.jpg')",
