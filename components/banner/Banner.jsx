@@ -8,7 +8,8 @@ const Banner = () => {
       animate={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ type: "spring", damping: 12 }}
-      className="relative w-full h-[90vh] z-10 font-Montserrat overflow-hidden bg-banner bg-center bg-cover"
+      className="relative w-full h-[90vh] z-10 font-Montserrat overflow-hidden bg-center bg-cover"
+      style={{ backgroundImage: "url('/static/images/banner.jpg')" }}
     >
       <motion.div
         initial={{ opacity: 0 }}
