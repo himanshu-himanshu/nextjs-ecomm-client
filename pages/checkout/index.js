@@ -85,8 +85,7 @@ const index = () => {
                             {item.title}
                           </h1>
                           <span className="font-bold text-2xl font-Gruppo">
-                            {/* ${item.quantity * item.price} */}
-                            $50
+                            ${item.quantity * item.price}
                           </span>
                         </div>
                         <div className="flex flex-row justify-between items-center">

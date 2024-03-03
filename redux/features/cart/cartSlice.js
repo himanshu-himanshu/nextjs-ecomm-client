@@ -2,23 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 /** Initial State for the cart */
 const initialState = {
-  cartItems: [
-    {
-      id: "7bdf17fb-63de-4e32-a3e9-d93f1fc2e891",
-      category: "Hoodie",
-      title: "Black Hoodie",
-      brand: "Nike",
-      price: 50,
-      trending: true,
-      image:
-        "https://warsawsneakerstore.com/storage/media/f1000/2023/nike/218365/nike-solo-swoosh-fleece-hoodie-white-dx1355-051-64e4bc1badc40.jpg",
-      type: "Clothing",
-      gender: "men",
-      rating: 4,
-      quantity: 2,
-    },
-  ],
-  amount: 30,
+  cartItems: [],
+  amount: 0,
   totalItems: 0,
 };
 
