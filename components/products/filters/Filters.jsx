@@ -3,7 +3,7 @@
 import "rc-slider/assets/index.css";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
-import CloseButton from "../../../utils/CloseButton";
+import { CgClose } from "react-icons/cg";
 
 const Filters = ({
   productsArray,
@@ -64,7 +64,7 @@ const Filters = ({
               Filters
             </h1>
             <div onClick={() => handleFiltersClose()}>
-              <CloseButton />
+              <CgClose className="text-2xl cursor-pointer" />
             </div>
           </div>
           <hr />

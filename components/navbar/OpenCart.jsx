@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import CloseButton from "../../utils/CloseButton";
 import Cart from "./Cart";
 import { useDispatch, useSelector } from "react-redux";
 import { MinusIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
@@ -11,6 +10,7 @@ import {
   deleteItem,
 } from "../../redux/features/cart/cartSlice";
 import { useRouter } from "next/router";
+import { CgClose } from "react-icons/cg";
 
 const OpenCart = ({ handleToggleCart }) => {
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ const OpenCart = ({ handleToggleCart }) => {
 
   const handleCheckout = () => {
     router.push("/checkout");
-    handleCloseCart();
+    handleToggleCart();
   };
 
   return (
@@ -65,7 +65,7 @@ const OpenCart = ({ handleToggleCart }) => {
             Your Cart
           </h1>
           <div onClick={() => handleToggleCart()}>
-            <CloseButton />
+            <CgClose className="text-2xl cursor-pointer" />
           </div>
         </div>
 

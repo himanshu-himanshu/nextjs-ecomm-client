@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { GiFlowerEmblem } from "react-icons/gi";
 
@@ -40,14 +39,23 @@ const Footer = () => {
       </span>
 
       <div className="flex flex-col space-y-6 justify-center items-center mt-4">
-        <span className="font-Gruppo text-gray-400">
+        <span className="font-Gruppo text-gray-400 text-sm">
           Designed & Developed by Himanshu with{" "}
           <span className="text-pink-500">&#9829;</span>
         </span>
         <div className="flex flex-row space-x-6 text-gray-500">
-          <FaLinkedin className="text-2xl hover:text-blue-500 cursor-pointer duration-200" />
-          <FaGithubSquare className="text-2xl hover:text-gray-200 cursor-pointer duration-200" />
-          <GiFlowerEmblem className="text-2xl hover:text-yellow-600 cursor-pointer duration-200" />
+          <Link
+            href={"https://www.linkedin.com/in/himanshu16315/"}
+            target="_blank"
+          >
+            <FaLinkedin className="text-2xl hover:text-blue-500 cursor-pointer duration-200" />
+          </Link>
+          <Link href={"https://github.com/himanshu-himanshu"} target="_blank">
+            <FaGithubSquare className="text-2xl hover:text-gray-200 cursor-pointer duration-200" />
+          </Link>
+          <Link href={"https://himanshufolio.com"} target="_blank">
+            <GiFlowerEmblem className="text-2xl hover:text-yellow-600 cursor-pointer duration-200" />
+          </Link>
         </div>
       </div>
     </footer>

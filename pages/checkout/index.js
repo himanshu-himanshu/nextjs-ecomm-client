@@ -57,9 +57,9 @@ const index = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div className="max-w-7xl mx-auto h-full w-full py-6 lg:py-12 px-2 lg:px-6">
-        <div className="flex flex-col lg:flex-row mt-6 lg:space-x-4">
-          <div className="w-full h-full lg:w-[60%] bg-white py-4">
+      <div className="max-w-7xl mx-auto h-full w-full py-6 lg:py-12 px-2 lg:px-6 overflow-x-hidden">
+        <div className="flex flex-col-reverse md:flex-row mt-6 lg:space-x-4">
+          <div className="w-full h-full md:w-[60%] bg-white py-4">
             <h1 className="text-3xl font-Gruppo font-bold p-2 uppercase mb-4">
               my Bag
             </h1>
@@ -85,7 +85,8 @@ const index = () => {
                             {item.title}
                           </h1>
                           <span className="font-bold text-2xl font-Gruppo">
-                            ${item.quantity * item.price}
+                            {/* ${item.quantity * item.price} */}
+                            $50
                           </span>
                         </div>
                         <div className="flex flex-row justify-between items-center">
@@ -122,22 +123,22 @@ const index = () => {
               )}
             </div>
           </div>
-          <div className="w-full h-full lg:w-[40%] bg-gray-100/50 p-4 font-Gruppo text-primary font-extrabold">
-            <h1 className="text-3xl p-2 uppercase mb-4">summary</h1>
+          <div className="w-full h-full md:w-[50%] lg:w-[40%] bg-gray-100/50 p-4 font-Gruppo text-primary font-extrabold">
+            <h1 className="text-2xl lg:text-3xl p-2 uppercase mb-4">summary</h1>
             <hr />
-            <div className="flex flex-row justify-between items-center p-2 text-xl">
+            <div className="flex flex-row justify-between items-center p-2 text-lg sm:text-xl">
               <span>Subtotal</span>
               <span>${totalAmount}</span>
             </div>
-            <div className="flex flex-row justify-between items-center p-2 text-xl">
+            <div className="flex flex-row justify-between items-center p-2 text-lg sm:text-xl">
               <span>Delivery & Handling</span>
               <span>{totalAmount > 100 ? "Free" : "$25"}</span>
             </div>
-            <div className="flex flex-row justify-between items-center p-2 text-xl">
+            <div className="flex flex-row justify-between items-center p-2 text-lg sm:text-xl">
               <span>Tax</span>
               <span>${Math.round(totalAmount * 0.13 * 100) / 100}</span>
             </div>
-            <div className="mt-4 flex flex-row justify-between items-center p-2 text-xl border-t-[1px] py-4">
+            <div className="mt-4 flex flex-row justify-between items-center p-2 text-lg sm:text-xl border-t-[1px] py-4">
               <span>Total</span>
               <span>
                 $

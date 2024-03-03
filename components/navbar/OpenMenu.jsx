@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import React from "react";
-import CloseButton from "../../utils/CloseButton";
 import Link from "next/link";
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import { GiFlowerEmblem } from "react-icons/gi";
+import { CgClose } from "react-icons/cg";
 
 const OpenMenu = ({ handleToggleMenu }) => {
   const MENU_LIST = [
@@ -37,7 +37,7 @@ const OpenMenu = ({ handleToggleMenu }) => {
               onClick={() => handleToggleMenu()}
               className="flex justify-end hover:cursor-pointer bg-secondary p-2 mr-3 rounded-full text-primary border"
             >
-              <CloseButton />
+              <CgClose className="text-2xl cursor-pointer" />
             </div>
           </div>
 
@@ -57,8 +57,7 @@ const OpenMenu = ({ handleToggleMenu }) => {
           </div>
           <div className="flex flex-col space-y-6 justify-center items-center">
             <span className="font-Gruppo">
-              Designed & Developed by Himanshu with{" "}
-              <span className="text-pink-500">&#9829;</span>
+              Designed & Developed by Himanshu
             </span>
             <div className="flex flex-row space-x-6">
               <FaLinkedin className="text-2xl hover:text-blue-600 cursor-pointer duration-200" />
