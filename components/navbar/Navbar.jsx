@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Cart from "./Cart";
-import MobileMenu from "./MobileMenu";
 import OpenCart from "./OpenCart";
 import OpenMenu from "./OpenMenu";
+import { HiMenuAlt1 } from "react-icons/hi";
 import { AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [openCart, setOpenCart] = useState(false);
-  const [openMenu, setOpenMenu] = useState(true);
+  const [openMenu, setOpenMenu] = useState(false);
 
   const MENU_LIST = [
     { text: "Home", href: "/" },
@@ -16,21 +16,16 @@ const Navbar = () => {
     { text: "Women", href: "/products/women" },
   ];
 
-  const handleOpenCart = () => {
-    document.body.style.overflow = "hidden";
-    setOpenCart(true);
+  const handleToggleMenu = () => {
+    const newState = !openMenu;
+    setOpenMenu(newState);
+    document.body.style.overflow = newState ? "hidden" : "unset";
   };
 
-  const handleCloseCart = () => {
-    document.body.style.overflow = "unset";
-    setOpenCart(false);
-  };
-
-  const handleOpenMenu = () => {
-    setOpenMenu(true);
-  };
-  const handleCloseMenu = () => {
-    setOpenMenu(false);
+  const handleToggleCart = () => {
+    const newState = !openCart;
+    setOpenCart(newState);
+    document.body.style.overflow = newState ? "hidden" : "unset";
   };
 
   return (
@@ -53,24 +48,29 @@ const Navbar = () => {
             ))}
           </div>
         </div>
-        <MobileMenu handleOpenMenu={handleOpenMenu} />
-        {openMenu && <OpenMenu handleCloseMenu={handleCloseMenu} />}
+
+        {/*** MOBILE MENU HAMBURGER ICON BELOW */}
+        <div
+          className="lg:hidden flex items-center justify-start w-1/3 hover:cursor-pointer"
+          onClick={() => handleToggleMenu()}
+        >
+          <HiMenuAlt1 className="text-3xl text-primary" />
+        </div>
+
+        {openMenu && <OpenMenu handleToggleMenu={handleToggleMenu} />}
+
         <div className="flex items-center justify-center w-1/3">
           <div className="text-2xl md:text-4xl uppercase font-extrabold tracking-wider hover:cursor-pointer font-Borui p-2">
             <a href="/"> Grab.it</a>
           </div>
         </div>
         <div className="flex flex-row justify-end items-center space-x-2 md:space-x-4 w-1/3">
-          <Cart handleOpenCart={handleOpenCart} />
+          <Cart handleToggleCart={handleToggleCart} />
         </div>
 
         <AnimatePresence initial={false}>
           {openCart && (
-            <OpenCart
-              handleOpenCart={handleOpenCart}
-              handleCloseCart={handleCloseCart}
-              openCart={openCart}
-            />
+            <OpenCart handleToggleCart={handleToggleCart} openCart={openCart} />
           )}
         </AnimatePresence>
       </div>

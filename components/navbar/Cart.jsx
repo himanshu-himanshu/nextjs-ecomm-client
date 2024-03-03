@@ -8,7 +8,7 @@ const Cart = ({ ...restProps }) => {
       <a
         href="#"
         className="absolute"
-        onClick={() => restProps.handleOpenCart()}
+        onClick={() => restProps.handleToggleCart()}
       >
         <ShoppingBagIcon className="h-6 w-6 text-primary" />
       </a>

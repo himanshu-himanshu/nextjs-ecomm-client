@@ -10,10 +10,9 @@ import {
   updateQuantity,
   deleteItem,
 } from "../../redux/features/cart/cartSlice";
-import { BsCartX } from "react-icons/bs";
 import { useRouter } from "next/router";
 
-const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
+const OpenCart = ({ handleToggleCart }) => {
   const dispatch = useDispatch();
   const router = useRouter();
   const items = useSelector((store) => store.cart.cartItems);
@@ -36,6 +35,11 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
     );
   };
 
+  const handleCheckout = () => {
+    router.push("/checkout");
+    handleCloseCart();
+  };
+
   return (
     <>
       <motion.div
@@ -44,7 +48,7 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
         transition={{ duration: 0.2 }}
         exit={{ opacity: 0 }}
         className="bg-gray-800 absolute w-full h-full top-0 left-0 overflow-hidden cursor-crosshair z-40"
-        onClick={() => handleCloseCart()}
+        onClick={() => handleToggleCart()}
       />
       <motion.div
         initial={{ x: 400, opacity: 0 }}
@@ -55,12 +59,12 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
       >
         {/**  Cart header */}
         <div className="flex flex-row justify-between items-center px-6 py-6 h-[10vh] border-b">
-          <Cart handleOpenCart={handleOpenCart} />
+          <Cart handleToggleCart={handleToggleCart} />
 
           <h1 className="font-Borui tracking-wide text-xl font-light">
             Your Cart
           </h1>
-          <div onClick={() => handleCloseCart()}>
+          <div onClick={() => handleToggleCart()}>
             <CloseButton />
           </div>
         </div>
@@ -84,7 +88,7 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
                     animate={{ opacity: 100 }}
                     transition={{ duration: 0.1 }}
                     exit={{ opacity: 0 }}
-                    className="group flex flex-row items-center duration-300 p-4 border-b border-gray-200"
+                    className="group flex flex-row items-center duration-300 p-4 border-b last:border-b-0 border-gray-200"
                     key={item.id}
                   >
                     <div className="relative duration-300 w-1/3">
@@ -138,7 +142,7 @@ const OpenCart = ({ handleCloseCart, handleOpenCart }) => {
                 <span>Shipping & taxes calculated at checkout</span>
               </h1>
               <div
-                onClick={() => router.push("/checkout")}
+                onClick={() => handleCheckout()}
                 className="w-full font-bold uppercase px-6 py-5 bg-primary/90 border border-primary text-secondary hover:bg-primary hover:text-white duration-200 font-Gruppo flex justify-center items-center space-x-3 hover:cursor-pointer shadow-sm"
               >
                 <span className="text-lg tracking-wider uppercase">
