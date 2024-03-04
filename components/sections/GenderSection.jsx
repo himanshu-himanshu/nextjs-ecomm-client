@@ -14,26 +14,18 @@ const GenderSection = () => {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className={`h-full border flex justify-center items-center bg-men_section bg-cover bg-center`}
+            className="h-full border flex justify-center items-center bg-men_section bg-cover bg-center"
           >
-            <Link
-              href={`/products/men`}
-              passHref
-              className="mt-6 font-bold px-4 md:px-8 py-4 border border-secondary hover:bg-secondary text-primary duration-200 text-xl md:text-2xl font-Gruppo tracking-wider hover:-translate-y-1 hover:shadow-2xl bg-secondary/90"
-            >
+            <Link href={`/products/men`} passHref className="linkStyles">
               Shop Men's
             </Link>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className={`h-full border flex justify-center items-center bg-women_section bg-cover bg-center`}
+            className="h-full border flex justify-center items-center bg-women_section bg-cover bg-center"
           >
-            <Link
-              href={`/products/women`}
-              passHref
-              className="mt-6 font-bold px-4 md:px-8 py-4 border border-secondary hover:bg-secondary text-primary duration-200 text-xl md:text-2xl font-Gruppo tracking-wider hover:-translate-y-1 hover:shadow-2xl bg-secondary/90"
-            >
+            <Link href={`/products/women`} passHref className="linkStyles">
               Shop Women's
             </Link>
           </motion.div>

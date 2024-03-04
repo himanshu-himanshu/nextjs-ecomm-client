@@ -43,7 +43,7 @@ const Product = ({ item, showTrending }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7, ease: "anticipate" }}
         onClick={(e) => handleProductRedirect(e)}
-        className="relative group flex flex-col justify-center items-center hover:cursor-pointer duration-300 border-2 border-gray-10 hover:border-primary/60"
+        className="relative group flex flex-col justify-center items-center hover:cursor-pointer duration-300 border-2 border-gray-10 hover:border-primary/60 hover:shadow-md"
       >
         {item.trending && showTrending && (
           <div className="absolute p-3 top-0 right-0 z-30 flex justify-center items-center">
@@ -78,7 +78,7 @@ const Product = ({ item, showTrending }) => {
             </button>
           </div>
         </div>
-        <div className="w-full px-2 pb-1 flex flex-row justify-between items-center font-Borui">
+        <div className="w-full px-2 pb-1 pt-2 flex flex-row justify-between items-center font-Borui">
           <h1 className="font-semibold text-gray-700 text-sm">{item.brand}</h1>
           <span className="flex flex-row items-center space-x-2">
             <span className="text-sm md:text-md text-gray-600">

@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 
 const PopularCategories = () => {
@@ -11,7 +10,7 @@ const PopularCategories = () => {
       </div>
       <div className="h-[70vh] md:h-[90vh] lg:h-[70vh] w-full py-12 px-6">
         <div className="h-full w-full grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-          <div className="h-full flex flex-col justify-center items-center bg-jacket bg-cover bg-center hover:cursor-pointer">
+          <div className="h-full flex flex-col justify-center items-center bg-jacket bg-cover bg-center">
             <LinkButton title="Shop Jackets" />
           </div>
           <div className="h-full flex flex-col justify-center items-center bg-pant bg-cover bg-center">

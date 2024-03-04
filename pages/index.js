@@ -1,5 +1,6 @@
 import Head from "next/head";
-
+import { IoIosArrowDropupCircle } from "react-icons/io";
+import { BsArrowUpCircleFill } from "react-icons/bs";
 import {
   Navbar,
   Banner,
@@ -10,8 +11,33 @@ import {
   PopularCategories,
   Features,
 } from "../components";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [showArrow, setShowArrow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowArrow(true);
+      } else {
+        setShowArrow(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <Head>
@@ -27,6 +53,14 @@ export default function Home() {
       <PopularCategories />
       <Features />
       <Footer />
+      {showArrow && (
+        <div
+          className="fixed bottom-0 right-0 z-40 m-4 cursor-pointer border-0"
+          onClick={scrollToTop}
+        >
+          <BsArrowUpCircleFill className="text-5xl text-yellow-700 rounded-full" />
+        </div>
+      )}
     </>
   );
 }

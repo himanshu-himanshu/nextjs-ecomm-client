@@ -1,18 +1,16 @@
-import React, { useEffect } from "react";
-import { Footer, Navbar } from "../../components";
-import Head from "next/head";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { Toaster } from "react-hot-toast";
-import { showToast } from "../../utils/showToast";
 import { motion } from "framer-motion";
 import { MinusIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
-import { IoCloseOutline } from "react-icons/io5";
+import { Footer, Navbar } from "../../components";
+import Head from "next/head";
 import {
   updateQuantity,
   deleteItem,
 } from "../../redux/features/cart/cartSlice";
-import { useRouter } from "next/router";
 
 const index = () => {
   const dispatch = useDispatch();
@@ -24,7 +22,7 @@ const index = () => {
     if (items.length === 0) {
       router.push("/");
     }
-  }, []);
+  }, [items]);
 
   const updateQuantityFunction = (id, type) => {
     dispatch(
@@ -122,7 +120,7 @@ const index = () => {
               )}
             </div>
           </div>
-          <div className="w-full h-full md:w-[50%] lg:w-[40%] bg-gray-100/50 p-4 font-Gruppo text-primary font-extrabold">
+          <div className="w-full h-full md:w-[50%] lg:w-[40%] bg-gray-100/80 p-4 font-Gruppo text-primary font-extrabold">
             <h1 className="text-2xl lg:text-3xl p-2 uppercase mb-4">summary</h1>
             <hr />
             <div className="flex flex-row justify-between items-center p-2 text-lg sm:text-xl">
@@ -159,5 +157,3 @@ const index = () => {
 };
 
 export default index;
-
-/**  */
