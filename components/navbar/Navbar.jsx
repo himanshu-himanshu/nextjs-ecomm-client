@@ -38,7 +38,7 @@ const Navbar = () => {
           <div className="flex flex-row space-x-4 lg:space-x-8 uppercase tracking-wider text-sm font-light">
             {MENU_LIST.map((item, index) => (
               <Link
-                className="hover:cursor-pointer hover:text-gray-500"
+                className="hover:cursor-pointer hover:text-gray-500 font-Gruppo font-extrabold text-lg"
                 href={item.href}
                 passHref
                 key={index}

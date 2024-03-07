@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { IoIosArrowDropupCircle } from "react-icons/io";
 import { BsArrowUpCircleFill } from "react-icons/bs";
 import {
   Navbar,
